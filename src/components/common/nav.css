@@ -1,0 +1,17 @@
+.navegador{
+    background-image: url(https://tse4.mm.bing.net/th?id=OIP.fj2lBZ7WshIIoxlAIWvSCAHaEw&pid=Api&P=0&h=180);
+    background-color: rgba(49, 22, 9, 0.815);
+}
+.link{
+    font-weight: 700;
+    font-size: 16px;
+}
+@media  only screen and (max-width: 500px) {
+   
+    .imglogo{
+        margin: 0px 80px;
+    }
+    .btn-menu{
+      font-size: 30px;
+    }
+}
