@@ -1,12 +1,14 @@
 
-import './App.css'
+
 
 function App() {
 
 
   return (
     <>
-     <h1>Hotel campo Verde</h1>
+ <h1 className=" text-3xl font-bold underline">
+      CAMPO VERDE
+    </h1> 
     </>
   )
 }
