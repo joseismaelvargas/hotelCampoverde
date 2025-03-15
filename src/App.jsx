@@ -1,6 +1,6 @@
 import Nav from "./components/common/nav"
 import { BrowserRouter,Route,Routes } from "react-router-dom"
-import Index from "./components/page"
+import Index from "./components/page/Index"
 import Fotos from "./components/page/Fotos"
 import Administrador from "./components/page/Administrador"
 import Salon from "./components/page/Salon"
