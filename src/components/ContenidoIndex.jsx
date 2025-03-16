@@ -16,31 +16,43 @@ export const ContenidoIndex=()=>{
                 <div className="div-content">
                     <FaHotel className="icon"></FaHotel>
                 <h2>HABITACION</h2>
-                <p>Podrás elegir entre habitaciones Suite o Standar. Calidad y Confort.</p>  
+                <p>Podrás elegir entre habitaciones Suite o Standar. Calidad y Confort.Ya sea que busques una experiencia lujosa y funcionalidad de nuestras habitaciones estándar,</p>  
                 </div>
               
-                <button>Leer mas</button>
+                <button>Ver mas</button>
             </div>
             
             <div className="div">
-               <MdOutlineBedtime className="icon"></MdOutlineBedtime>
-                <h2>DESCANSO</h2>
-                <p>Sentite en un lugar unico, tranquilo y agradable. Aqui, el tiempo no pasa.</p>
-                <button>Leer mas</button>
+                <div className="div-content">
+                      <MdOutlineBedtime className="icon"></MdOutlineBedtime> 
+                      <h2>DESCANSO</h2>
+                <p>Sentite en un lugar unico, tranquilo y agradable. Aqui, el tiempo no pasa.donde cada detalle está pensado  en un entorno diseñado para el descanso y la desconexión.</p>
+                    
+                </div>
+             
+               
+                <button>Ver mas</button>
             </div>
             <div className="div"> 
-
-                  <FaSwimmingPool className="icon"></FaSwimmingPool>
+                    <div className="div-content">
+                        <FaSwimmingPool className="icon"></FaSwimmingPool>
                <h2>PISCINA</h2>
             
-               <p>Difrutar de nuestra piscina en un lugar optimo e íntimo</p>
-               <button>Leer mas</button>
+               <p>Difrutar de nuestra piscina en un lugar optimo e íntimoy relajante,  Sumérgete en una experiencia única, rodeado de confort y serenidad</p>
+
+                    </div>
+                  
+               <button>Ver mas</button>
             </div>
             <div className="div">
-                <LuPartyPopper className="icon"></LuPartyPopper>
+                <div className="div-content">
+                     <LuPartyPopper className="icon"></LuPartyPopper>
                 <h2>SALON</h2>
                 <p>Un lugar pensado y soñado para festejar tus mejores momentos. Casamientos, cumpleaños, aniversarios, convenciones, eventos en general</p>
-                <button>Leer mas</button>
+
+                </div>
+               
+                <button>Ver mas</button>
 
             </div> 
 
