@@ -13,20 +13,26 @@ export const ContenidoIndex=()=>{
         <section>
            <div className="div-padre">
             <div className="div">
-                <FaHotel className="icon"></FaHotel>
+                <div className="div-content">
+                    <FaHotel className="icon"></FaHotel>
                 <h2>HABITACION</h2>
-                <p>Podrás elegir entre habitaciones Suite o Standar. Calidad y Confort.</p>
+                <p>Podrás elegir entre habitaciones Suite o Standar. Calidad y Confort.</p>  
+                </div>
+              
                 <button>Leer mas</button>
             </div>
+            
             <div className="div">
                <MdOutlineBedtime className="icon"></MdOutlineBedtime>
                 <h2>DESCANSO</h2>
                 <p>Sentite en un lugar unico, tranquilo y agradable. Aqui, el tiempo no pasa.</p>
                 <button>Leer mas</button>
             </div>
-            <div className="div">
+            <div className="div"> 
+
+                  <FaSwimmingPool className="icon"></FaSwimmingPool>
                <h2>PISCINA</h2>
-               <FaSwimmingPool className="icon"></FaSwimmingPool>
+            
                <p>Difrutar de nuestra piscina en un lugar optimo e íntimo</p>
                <button>Leer mas</button>
             </div>

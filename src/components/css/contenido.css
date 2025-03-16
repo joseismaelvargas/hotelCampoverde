@@ -1,21 +1,28 @@
 .div{
     width: 400px;
-    border: solid rgb(230, 218, 218) 3px;
-    margin: 30px auto;
-    border-radius: 10px;
-    background-color: rgb(235, 227, 227);
     height: auto;
-    display: flex;
+      background-color: rgb(235, 227, 227); 
+       border: solid rgb(230, 218, 218) 3px; 
+          border-radius: 10px; 
+          display: flex;
     flex-direction: column;
 }
-.div>h2{
+.div-content{
+   
+    margin: 30px auto;
+
+  
+   
+   
+}
+.div-content>h2{
     text-align: center;
     color: rgb(34, 33, 33);
     margin: 18px;
     font-weight: bold;
     font-size: 30px;
 }
-.div>p{
+.div-content>p{
     text-align: center;
     font-weight: 500;
     font-size: 20px;
@@ -39,6 +46,9 @@
     color: white;
     
 }
+.div>button:hover{
+    background-color: rgb(233, 138, 30);
+}
 @media(min-width:558px){
     .div-padre{
         display: flex;
@@ -47,7 +57,23 @@
     }
     .div{
         width: 250px;
-        height: 200px;
+        height: auto;
         margin: 0px -40px;
+        
+    }
+    .div>button{
+        margin: 0px 0px 0px 0px ;
+        bottom: 0;
+    }
+    .div>p{
+        font-size: 15px;
+
+    }
+    .div>h2{
+        font-size: 20px;
+    }
+    .icon{
+        width: 200px;
+        font-size: 40px;
     }
 }
