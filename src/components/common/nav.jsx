@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <nav className="navegador bg-gray-800">
   <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div className=" relative flex h-31 items-center justify-between">
+    <div className=" relative flex h-20 sm:h-31 items-center justify-between">
            <img src="http://hotelcamposverdes.com.ar/wp-content/uploads/2016/12/logo.png"  className="imglogo w-[250px]"alt="logo" />
       <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
          
