@@ -1,0 +1,35 @@
+.img-carrusel{
+    width: 100%;
+    height: 500px;
+}
+.swiper-pagination-bullet {
+    background-color: #6d6868; 
+    width: 15px; 
+    height: 15px; 
+    opacity: 0.7;
+ 
+     
+    border-radius: 100%;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #9e430e; 
+    opacity: 1;
+  }
+  .div-info{
+    font-weight: bold;
+    z-index: 100;
+    position: fixed; 
+    width: 100%;
+    height: 100px;
+    background-color: rgba(22, 21, 21, 0.575);
+    color: rgb(255, 249, 249);
+    text-align: center;
+    font-size: 28px;
+    
+    bottom: 0; 
+  }
+  @media(min-width:580px){
+    .div-info{
+        font-size: 35px;
+    }
+  }
