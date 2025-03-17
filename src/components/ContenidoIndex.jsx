@@ -57,6 +57,13 @@ export const ContenidoIndex=()=>{
             </div> 
 
            </div>
+
+           <div>
+            <h1>Hotel</h1>
+            <p>
+            Hotel Campos Verdes ubicado en uno de los barrios mas destacados de la ciudad de San Justo, su arquitectura minimalista y moderna, se emplaza sobre un ambiente natural y cálido, rodeado por la naturaleza y la tranquilidad.</p>
+            <img src="" alt="" />
+           </div>
         </section>
         </>
     )
