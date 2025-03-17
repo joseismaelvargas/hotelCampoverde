@@ -67,7 +67,20 @@ export const ContenidoIndex=()=>{
                Hotel Campos Verdes ubicado en uno de los barrios mas destacados de la ciudad de San Justo, su arquitectura minimalista y moderna, se emplaza sobre un ambiente natural y cálido, rodeado por la naturaleza y la tranquilidad.</p>
                <img src={frente} alt="hotel" className="img-index" />
             </div>
-           
+           <div className="contactos">
+            <div className="contactos-header">
+               <h3>CONTACTOS</h3> 
+                </div>
+            <p>ADMINISTRACION:</p>
+            <p>Ruta: 11KM 571</p>
+            <p>Cel:381587939</p>
+            <p>email:infohotelCampover@gmail.com</p>
+            
+             <p>SALON DE FIESTAS:</p>
+            <p>Ruta 11Km 571</p>
+            <p>Buenos aires</p>
+            <p>Cel:382324554</p>
+           </div>
 
         </section>
         </>

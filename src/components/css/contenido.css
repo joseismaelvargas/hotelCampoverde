@@ -74,11 +74,28 @@
     width: 100%;
     height: 350px;
 }
+.contactos{
+    margin: 30px auto;
+    width: 360px;
+    background-color: white;
+    color: #666464;
+    
+}
+.contactos>p{
+    margin: 10px;
+}
+.contactos-header{
+    background-color: rgb(184, 117, 16);
+    padding: 18px;
+    color: white;
+    font-size: 23px;
+    text-align: start;
+}
 @media(min-width:558px){
     .section-hotel{
         margin: 0px  100px;
      
-        width: 900px;
+        width: 700px;
     }
     .section-hotel>p{
         font-family: sans-serif;
@@ -87,7 +104,8 @@
         margin: 20px;
     }
     .img-index{
-        height: 500px;
+        border-radius: 0px;
+        height: 400px;
     }
     .div-padre{
         display: flex;
