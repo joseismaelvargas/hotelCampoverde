@@ -3,6 +3,7 @@ import { MdOutlineBedtime } from "react-icons/md";
 import { LuPartyPopper } from "react-icons/lu";
 import { FaSwimmingPool } from "react-icons/fa";
 import { FaHotel } from "react-icons/fa";
+import frente from"/img/hotel-frente.jpg"
 
 
 
@@ -57,6 +58,7 @@ export const ContenidoIndex=()=>{
             </div> 
 
            </div>
+<<<<<<< HEAD
 
            <div>
             <h1>Hotel</h1>
@@ -64,6 +66,18 @@ export const ContenidoIndex=()=>{
             Hotel Campos Verdes ubicado en uno de los barrios mas destacados de la ciudad de San Justo, su arquitectura minimalista y moderna, se emplaza sobre un ambiente natural y cálido, rodeado por la naturaleza y la tranquilidad.</p>
             <img src="" alt="" />
            </div>
+=======
+           
+        </section>
+        <section className="container">
+            <div className="section-hotel">
+               <h1>HOTEL</h1>  
+               <p>
+               Hotel Campos Verdes ubicado en uno de los barrios mas destacados de la ciudad de San Justo, su arquitectura minimalista y moderna, se emplaza sobre un ambiente natural y cálido, rodeado por la naturaleza y la tranquilidad.</p>
+               <img src={frente} alt="hotel" className="img-index" />
+            </div>
+           
+>>>>>>> Index
         </section>
         </>
     )
