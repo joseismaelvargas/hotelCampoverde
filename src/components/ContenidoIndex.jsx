@@ -60,7 +60,7 @@ export const ContenidoIndex=()=>{
            </div>
            
         </section>
-        <section className="container">
+        <section className="hotel container">
             <div className="section-hotel">
                <h1>HOTEL</h1>  
                <p>
