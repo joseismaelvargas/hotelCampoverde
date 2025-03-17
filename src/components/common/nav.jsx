@@ -33,11 +33,11 @@ const Nav = () => {
         <div className="hidden sm:ml-6 sm:block">
           <div className="flex space-x-4">
           
-         <Link  className="link rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" en to={"/"}>Hotel</Link>
-         <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/servicios"}>Servicios</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/fotos"}>Fotos</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/salon"}>Salon</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>Administrador</Link>
+         <Link  className="link rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link>
+         <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/servicios"}>SERVICIOS</Link>
+         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/fotos"}>FOTOS</Link>
+         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/salon"}>SALON</Link>
+         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>
          
           </div>
         </div>
@@ -72,10 +72,12 @@ const Nav = () => {
   <div className={`${menu ? "block" : "hidden"} sm:hidden`} id="mobile-menu">
     <div className="space-y-1 px-2 pt-2 pb-3">
     
-      <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+      < Link end to={"/"} className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">HOTEL</Link>
+      <Link  end to={"/servicios"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SERVICIOS</Link>
+      <Link  end to={"/fotos"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">FOTOS</Link>
+      
+      <Link end to={"/salon"}className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
+      <Link end to={"/admin"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ADMINISTRACION</Link>
     </div>
   </div>
 </nav>

@@ -1,10 +1,11 @@
 .navegador{
-    background-image: url(https://tse4.mm.bing.net/th?id=OIP.fj2lBZ7WshIIoxlAIWvSCAHaEw&pid=Api&P=0&h=180);
+    background-image: url(http://hotelcamposverdes.com.ar/wp-content/themes/interior-lite/images/footerbg.jpg);
     background-color: rgba(49, 22, 9, 0.815);
 }
 .link{
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0px 2px;
 }
 @media  only screen and (max-width: 500px) {
    

@@ -1,0 +1,50 @@
+.footer-contenido{
+    background-image:url("http://hotelcamposverdes.com.ar/wp-content/themes/interior-lite/images/footerbg.jpg");
+    width: 100%;
+   
+}
+.menu-foooter{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+     
+    height: 160px;
+
+}
+.div-icono{
+
+    display: flex;
+    justify-content: center;
+}
+.icono-footer{
+    color: white;
+    margin: 20px;
+    font-size: 20px;
+    border: solid 1px white;
+    padding: 6px;
+}
+.icono-footer:hover{
+    color: rgb(241, 104, 13);
+    border: solid 1px rgb(241, 104, 13);
+}
+.link-footer{
+    
+    margin: 0px 8px;
+    font-size: 14px;
+}
+.div-link{
+    padding: 20px;
+    margin:  6px;
+    
+    
+}
+.link-footer:hover{
+    color: rgb(241, 104, 13);
+}
+@media(min-width:558px){
+    .menu-foooter{
+        height: 100px;
+    }
+   
+}
