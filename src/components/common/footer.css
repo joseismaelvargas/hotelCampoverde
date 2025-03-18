@@ -31,13 +31,13 @@
 .link-footer{
     
     margin: 0px 4px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight:bold;
 }
 .div-link{
     padding: 20px;
     margin:  -15px;
-    
+    border: solid 2px black;
     
 }
 .link-footer:hover{
