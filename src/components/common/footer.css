@@ -1,4 +1,4 @@
-.footer-contenido{
+8.footer-contenido{
     background-image:url("http://hotelcamposverdes.com.ar/wp-content/themes/interior-lite/images/footerbg.jpg");
     width: 100%;
    
@@ -35,7 +35,7 @@
 }
 .div-link{
     padding: 20px;
-    margin:  0px;
+    margin:  -9px;
     
     
 }
