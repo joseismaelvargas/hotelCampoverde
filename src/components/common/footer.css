@@ -35,10 +35,10 @@
     font-weight:bold;
 }
 .div-link{
-    padding: 20px;
+    padding: 10px;
     margin:  -15px;
     border: solid 2px black;
-    
+    width:100%;
 }
 .link-footer:hover{
     color: rgb(241, 104, 13);
