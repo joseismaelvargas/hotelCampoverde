@@ -35,9 +35,9 @@
     font-weight:bold;
 }
 .div-link{
-    padding: 10px;
-    margin:  -5px auto;
-    border: solid 2px black;
+    padding: 20px;
+    margin:  0px auto;
+
     width:100%;
 }
 .link-footer:hover{
