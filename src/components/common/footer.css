@@ -36,7 +36,7 @@
 }
 .div-link{
     padding: 10px;
-    margin:  -15px;
+    margin:  -5px auto;
     border: solid 2px black;
     width:100%;
 }
