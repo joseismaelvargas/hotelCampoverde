@@ -4,7 +4,8 @@ import { LuPartyPopper } from "react-icons/lu";
 import { FaSwimmingPool } from "react-icons/fa";
 import { FaHotel } from "react-icons/fa";
 import frente from"/img/hotel-frente.jpg"
-
+import { Link } from "react-router-dom";
+import { hotel } from "./js/datosservices";
 
 
 
@@ -20,7 +21,7 @@ export const ContenidoIndex=()=>{
                 <p>Podrás elegir entre habitaciones Suite o Standar. Calidad y Confort.Ya sea que busques una experiencia lujosa y funcionalidad de nuestras habitaciones estándar,</p>  
                 </div>
               
-                <button>Ver mas</button>
+              <Link className="button" end to={`/hotel/${hotel[0].id}`}>Ver mas</Link>
             </div>
             
             <div className="div">
@@ -32,7 +33,7 @@ export const ContenidoIndex=()=>{
                 </div>
              
                
-                <button>Ver mas</button>
+                <Link className="button" end to={`/hotel/${hotel[1].id}`}>Ver mas</Link>
             </div>
             <div className="div"> 
                     <div className="div-content">
@@ -43,7 +44,8 @@ export const ContenidoIndex=()=>{
 
                     </div>
                   
-               <button>Ver mas</button>
+                 
+                    <Link className="button" end to={`/hotel/${hotel[2].id}`}>Ver mas</Link>
             </div>
             <div className="div">
                 <div className="div-content">
@@ -53,7 +55,8 @@ export const ContenidoIndex=()=>{
 
                 </div>
                
-                <button>Ver mas</button>
+                
+                <Link className="button" end to={`/hotel/${hotel[3].id}`}>Ver mas</Link>
 
             </div> 
 
