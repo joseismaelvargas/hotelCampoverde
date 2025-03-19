@@ -35,7 +35,7 @@
 .icon{
     width: 200px;
     font-size: 70px;
-     color: rgb(73, 47, 7); 
+     /* color: rgb(73, 47, 7);  */
      margin: 6px auto;
 }
 .div>button{
@@ -47,7 +47,7 @@
    margin: 20px 0px 0px 0px;
   top: 0;
    border-radius: 10px;
-    background-color:rgb(112, 64, 0) ;
+    /* background-color:rgb(112, 64, 0) ; */
     color: white;
     
 }
@@ -65,14 +65,17 @@ li{
 .div-service{
     display: flex;
     justify-content: space-around;
-    border:solid 3px white;
+
     padding: 20px 10px;
 }
-.subtitle{
-    width: 100%;
-    color: white;
-   background-color: rgb(250, 151, 38);
+.section-hotel>.services{
+     width: 100%;
+    color: rgb(255, 251, 251);
+    padding: 10px;
+   background-color: rgb(255, 180, 41);
 }
+
+
 .section-hotel>p{
     font-size: 22px;
     color: #fffdfd;
@@ -101,11 +104,31 @@ li{
     font-size: 23px;
     text-align: start;
 }
+.dondeestamos{
+    background-color: orange;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    margin: 0px auto;
+    font-size: 30px;
+}
 @media(min-width:558px){
     .section-hotel{
         margin: 0px  100px;
      
         width: 700px;
+    }
+    .dondeestamos{
+        
+        width: 50%;
+        padding: 10px;
+        color: white;
+        margin: 0px 36px;
+        font-size: 30px;
+    }
+    .subtitle{
+        color: white;
+        background-color: rgb(238, 142, 16);
     }
     .hotel{
         display: flex;

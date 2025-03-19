@@ -2,6 +2,7 @@ import "./nav.css"
 import { useState } from "react"
 import React from 'react'
 import { Link } from "react-router-dom"
+import {hotel}from"../js/datosservices"
 
 const Nav = () => {
     const [menu,setMenu]=useState(false)
@@ -36,7 +37,7 @@ const Nav = () => {
          <Link  className="link rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link>
          <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/servicios"}>SERVICIOS</Link>
          <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/fotos"}>FOTOS</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/salon"}>SALON</Link>
+         <Link  end to={`/hotel/${hotel[3].id}` }className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
          <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>
          
           </div>
@@ -75,8 +76,8 @@ const Nav = () => {
       < Link end to={"/"} className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">HOTEL</Link>
       <Link  end to={"/servicios"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SERVICIOS</Link>
       <Link  end to={"/fotos"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">FOTOS</Link>
-      
-      <Link end to={"/salon"}className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
+             
+      <Link  end to={`/hotel/${hotel[3].id}` }className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
       <Link end to={"/admin"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ADMINISTRACION</Link>
     </div>
   </div>

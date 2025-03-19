@@ -14,7 +14,7 @@ const Servicios = () => {
     <main> 
        <section className="hotel container">
                 <div className="section-hotel">
-                   <h1 className='subtitle'>SERVICIOS</h1>  
+                   <h1 className='subtitle-services'>SERVICIOS</h1>  
                    <div className='div-service'>
                      <ul>
                 <li>-lobby bar</li>
