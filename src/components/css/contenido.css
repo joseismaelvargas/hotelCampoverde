@@ -57,11 +57,21 @@
 .section-hotel{
     margin: 0px 30px;
 }
-.section-hotel>h1{
-    font-size: 30px;
-    font-weight: bold;
+
+li{
+    font-weight: 500;
     margin: 10px;
-    color: rgb(192, 99, 13);
+}
+.div-service{
+    display: flex;
+    justify-content: space-around;
+    border:solid 3px white;
+    padding: 20px 10px;
+}
+.subtitle{
+    width: 100%;
+    color: white;
+   background-color: rgb(250, 151, 38);
 }
 .section-hotel>p{
     font-size: 22px;
