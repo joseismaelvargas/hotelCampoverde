@@ -58,15 +58,7 @@ export const ContenidoIndex=()=>{
             </div> 
 
            </div>
-<<<<<<< HEAD
 
-           <div>
-            <h1>Hotel</h1>
-            <p>
-            Hotel Campos Verdes ubicado en uno de los barrios mas destacados de la ciudad de San Justo, su arquitectura minimalista y moderna, se emplaza sobre un ambiente natural y cálido, rodeado por la naturaleza y la tranquilidad.</p>
-            <img src="" alt="" />
-           </div>
-=======
            
         </section>
         <section className="container">
@@ -77,7 +69,7 @@ export const ContenidoIndex=()=>{
                <img src={frente} alt="hotel" className="img-index" />
             </div>
            
->>>>>>> Index
+
         </section>
         </>
     )
