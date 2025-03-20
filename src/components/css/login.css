@@ -1,0 +1,59 @@
+.modal-body{
+   background-image: url("/img/fondo.jpg");
+   border: solid white 2px;
+}
+.modal-header{
+    color: white;
+    background-image: url("/img/footer.jpg");
+    border: solid white 2px;
+    
+}
+.modal-footer{
+    background-image: url("/img/footer.jpg");
+    border: solid white 2px;
+   
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+form>label{
+    font-size: 25px;
+    margin: 2px;
+    width: 250px;
+    color: white;
+
+}
+
+form>input{
+    
+    color: white;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid white 1px;
+}
+.tamañoLogoGyF{
+    width: 30px;
+}
+.loginface{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    width: 200px;
+    display: flex;
+    border-radius:10px ;
+    background-color: rgb(77, 77, 235);
+}
+.logingoogle{
+    text-align: center;
+    padding: 10px;
+    color: rgb(54, 53, 53);
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    border-radius:10px ;
+    background-color: rgb(240, 240, 248);
+}

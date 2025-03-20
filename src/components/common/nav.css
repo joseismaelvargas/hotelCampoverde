@@ -23,6 +23,7 @@
 @media  only screen and (max-width: 500px) {
    
     .imglogo{
+        width: 190px;
         margin: 0px 80px;
     }
     .btn-menu{
