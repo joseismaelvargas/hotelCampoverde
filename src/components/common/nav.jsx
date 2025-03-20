@@ -2,6 +2,7 @@ import "./nav.css"
 import { useState } from "react"
 import React from 'react'
 import { Link } from "react-router-dom"
+import {hotel}from"../js/datosservices"
 
 const Nav = () => {
     const [menu,setMenu]=useState(false)
@@ -9,7 +10,7 @@ const Nav = () => {
     <nav className="navegador bg-gray-800">
   <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div className=" relative flex h-20 sm:h-31 items-center justify-between">
-           <img src="http://hotelcamposverdes.com.ar/wp-content/uploads/2016/12/logo.png"  className="imglogo w-[250px]"alt="logo" />
+           <img src="/img/logo.png"  className="imglogo w-[250px]"alt="logo" />
       <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
          
         <button type="button"onClick={() =>setMenu((prev)=>!prev)}  className= " btn-menu relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
@@ -33,11 +34,11 @@ const Nav = () => {
         <div className="hidden sm:ml-6 sm:block">
           <div className="flex space-x-4">
           
-         <Link  className="link rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" en to={"/"}>Hotel</Link>
-         <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/servicios"}>Servicios</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/fotos"}>Fotos</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/salon"}>Salon</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>Administrador</Link>
+         <Link  className="link rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link>
+         <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/servicios"}>SERVICIOS</Link>
+         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/fotos"}>FOTOS</Link>
+         <Link  end to={`/hotel/${hotel[3].id}` }className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
+         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>
          
           </div>
         </div>
@@ -72,10 +73,12 @@ const Nav = () => {
   <div className={`${menu ? "block" : "hidden"} sm:hidden`} id="mobile-menu">
     <div className="space-y-1 px-2 pt-2 pb-3">
     
-      <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+      < Link end to={"/"} className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">HOTEL</Link>
+      <Link  end to={"/servicios"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SERVICIOS</Link>
+      <Link  end to={"/fotos"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">FOTOS</Link>
+             
+      <Link  end to={`/hotel/${hotel[3].id}` }className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
+      <Link end to={"/admin"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ADMINISTRACION</Link>
     </div>
   </div>
 </nav>
