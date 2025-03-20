@@ -10,7 +10,7 @@ const Nav = () => {
     <nav className="navegador bg-gray-800">
   <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div className=" relative flex h-20 sm:h-31 items-center justify-between">
-           <img src="http://hotelcamposverdes.com.ar/wp-content/uploads/2016/12/logo.png"  className="imglogo w-[250px]"alt="logo" />
+           <img src="/img/logo.png"  className="imglogo w-[250px]"alt="logo" />
       <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
          
         <button type="button"onClick={() =>setMenu((prev)=>!prev)}  className= " btn-menu relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">

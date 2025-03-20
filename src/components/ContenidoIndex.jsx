@@ -88,12 +88,12 @@ export const ContenidoIndex=()=>{
         </section>
         <section className="container m-auto">
             <h2 className="dondeestamos">¿Donde Estamos ?</h2>
-            <p className="sm:text-start sm:text-1xl text-white sm:my-3 sm:mx-40 mx-auto my-3">
+            <p className="sm:text-start sm:text-1x3 text-white sm:my-3 sm:mx-40 mx-auto my-3">
     Te invitamos a descubrir la tranquilidad y belleza de <strong>Hotel Campo Verd</strong>.  
     Un refugio perfecto para relajarte y disfrutar de la naturaleza.  
     Ven y vive una experiencia inolvidable con nosotros.
   </p>
-  <p className="sm:text-start text-white sm:my-3 sm:mx-40 my-4">
+  <p className="sm:text-start sm:text-1x3 text-white sm:my-3 sm:mx-40 my-4">
     Ubicado en un entorno natural privilegiado, nuestro hotel es el destino ideal  
     para quienes buscan escapar del estrés de la ciudad y sumergirse en la paz del campo.  
   </p>
