@@ -59,7 +59,9 @@
 }
 
 li{
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 20px;
+    color: orange;
     margin: 10px;
 }
 .div-service{
@@ -111,6 +113,9 @@ li{
     color: white;
     margin: 0px auto;
     font-size: 30px;
+}
+button:hover{
+background-color: orange;
 }
 @media(min-width:558px){
     .section-hotel{

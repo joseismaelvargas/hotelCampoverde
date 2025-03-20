@@ -4,8 +4,21 @@
 }
 .link{
     font-weight: 400;
-    font-size: 14px;
-    margin: 0px 2px;
+    font-size: 16px;
+    text-decoration: none;
+
+    color: white;
+}
+.img-login{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.button-login{
+    border-radius: 100%;
+}
+.button-login:hover{
+    border: solid rgb(207, 119, 19) 1px;
 }
 @media  only screen and (max-width: 500px) {
    
@@ -15,7 +28,4 @@
     .btn-menu{
       font-size: 30px;
     }
-}
-@media(min-width:768px){
-    
 }

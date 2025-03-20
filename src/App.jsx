@@ -6,6 +6,7 @@ import Administrador from "./components/page/Administrador"
 import Servicios from "./components/page/Servicios"
 import Footer from "./components/common/Footer"
 import Hotel from "./components/Hotel"
+import { ModalLogin } from "./components/ModalLogin"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <>
     <BrowserRouter>
     <Nav></Nav>
+ <ModalLogin></ModalLogin>
     <Routes>
    
       <Route  path="/" element={<Index></Index>}></Route>

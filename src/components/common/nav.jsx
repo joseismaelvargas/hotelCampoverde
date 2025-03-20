@@ -34,17 +34,17 @@ const Nav = () => {
         <div className="hidden sm:ml-6 sm:block">
           <div className="flex space-x-4">
           
-         <Link  className="link rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link>
-         <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/servicios"}>SERVICIOS</Link>
+         <Link  className="link  px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link>
+         <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white " en to={"/servicios"}>SERVICIOS</Link>
          <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/fotos"}>FOTOS</Link>
-         <Link  end to={`/hotel/${hotel[3].id}` }className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
+         <Link className=" link rounded-md  px-3 py-2 text-sm font-medium text-white"  end to={`/hotel/${hotel[3].id}` }>SALON</Link>
          <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>
          
           </div>
         </div>
       </div>
       <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+        <button type="button" className="button-login relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
           <span className="absolute -inset-1.5"></span>
           <span className="sr-only">View notifications</span>
           <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
@@ -54,11 +54,15 @@ const Nav = () => {
 
     
         <div className="relative ml-3">
+       
+
           <div>
-            <button type="button" className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+            <button type="button" className="button-login" id="user-menu-button"
+             data-bs-toggle="modal" data-bs-target="#exampleModal"
+            aria-expanded="false" aria-haspopup="true">
               <span className="absolute -inset-1.5"></span>
               <span className="sr-only">Open user menu</span>
-              <img className="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""></img>
+              <img className="img-login " src="https://previews.123rf.com/images/yupiramos/yupiramos1610/yupiramos161007352/64369849-joven-hombre-aislado-avatar-icono-de-ilustraci%C3%B3n-vectorial-de-dise%C3%B1o.jpg" alt=""></img>
             </button>
           </div>
 

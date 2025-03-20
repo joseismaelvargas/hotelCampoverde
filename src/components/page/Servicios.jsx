@@ -14,20 +14,21 @@ const Servicios = () => {
     <main> 
        <section className="hotel container">
                 <div className="section-hotel">
-                   <h1 className='subtitle-services'>SERVICIOS</h1>  
+                   <h1 className='subtitle-services'>SERVICIOS</h1> 
+                   <p>"Hotel Campos Verdes te ofrece un servicio personalizado para que tu estancia sea una experiencia única. Nuestro equipo está disponible las 24 horas del día, siempre dispuesto a atender todas tus necesidades con la mejor actitud y profesionalismo."</p> 
                    <div className='div-service'>
                      <ul>
-                <li>-lobby bar</li>
-                <li>- wifi</li>
+                <li>-Lobby bar</li>
+                <li>-Wifi</li>
                 <li>-Catering</li>
                 <li>-Servicios ala Habitacion</li>
-                <li>-amplio parque</li>
+                <li>-Amplio parque</li>
                 <li>-Restaurante</li>
                </ul>
                <ul>
-                <li>-estacionamiento privado</li>
-                <li>-piscina</li>
-                <li>-salon de fiestas</li>
+                <li>-Estacionamiento privado</li>
+                <li>-Piscina</li>
+                <li>-Salon de fiestas</li>
                 <li>-Servicios ala Habitacion</li>
                 <li>-Casino Privado</li>
                 <li>-Mesa de comida y Musica</li>

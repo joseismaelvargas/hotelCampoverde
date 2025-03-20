@@ -93,7 +93,7 @@ export const ContenidoIndex=()=>{
     Un refugio perfecto para relajarte y disfrutar de la naturaleza.  
     Ven y vive una experiencia inolvidable con nosotros.
   </p>
-  <p className="sm:text-start sm:text-1x3 text-white sm:my-3 sm:mx-40 my-4">
+  <p className="sm:text-start sm:text-1x3 text-white sm:my-3 sm:mx-40 my-3 mx-auto">
     Ubicado en un entorno natural privilegiado, nuestro hotel es el destino ideal  
     para quienes buscan escapar del estrés de la ciudad y sumergirse en la paz del campo.  
   </p>
