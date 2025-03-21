@@ -7,7 +7,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { hotel } from '../js/datosservices';
 
-const Footer = () => {
+const Footer = ({logeado}) => {
   return (
     <>
     <footer className='footer-contenido'>
@@ -26,11 +26,14 @@ const Footer = () => {
           
            |
            <Link end to={"/servicios"} className='link-footer'>SERVICIOS</Link>
+           {
+            logeado.length>0?   <Link  end to={"/admin"}className='link-footer'>| ADMINISTRACION</Link>:""
+           }
            |
            <Link end to={`/hotel/${hotel[3].id}`} className='link-footer'>SALON</Link>
            |
            
-           <Link  end to={"/admin"}className='link-footer'>ADMINISTRACION</Link>  
+         
             </div>
            
            <div>

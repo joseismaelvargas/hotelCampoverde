@@ -1,21 +1,22 @@
 import Nav from "./components/common/nav"
 import { BrowserRouter,Route,Routes } from "react-router-dom"
-import Index from "./components/page/Index"
-
 import Administrador from "./components/page/Administrador"
 import Servicios from "./components/page/Servicios"
 import Footer from "./components/common/Footer"
 import Hotel from "./components/Hotel"
 import { ModalLogin } from "./components/ModalLogin"
 import Habitaciones from "./components/page/Habitaciones"
+import Index from "./components/page"
+import { useState } from "react"
 function App() {
+  const usuario=JSON.parse(sessionStorage.getItem("Hotel"))||[]
+  const [logeado,setlogeado]=useState(usuario)
 
-
-
+ 
   return (
     <>
     <BrowserRouter>
-    <Nav></Nav>
+    <Nav logeado={logeado} setlogeado={setlogeado}></Nav>
  <ModalLogin></ModalLogin>
     <Routes>
    
@@ -27,7 +28,7 @@ function App() {
       <Route path="/hotel/:id" element={<Hotel></Hotel>}></Route>
       
     </Routes>
-    <Footer></Footer>
+    <Footer logeado={logeado} setlogeado={setlogeado}></Footer>
     </BrowserRouter>
    
        

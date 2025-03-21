@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from "react-router-dom"
 import {hotel}from"../js/datosservices"
 
-const Nav = () => {
+const Nav = ({logeado}) => {
     const [menu,setMenu]=useState(false)
   return (
     <nav className="navegador bg-gray-800">
@@ -34,12 +34,15 @@ const Nav = () => {
         <div className="hidden sm:ml-6 sm:block">
           <div className="flex space-x-4">
           
-         <Link  className="link  px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link> 
+         <Link  className="link  rounded-md   px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link> 
          <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/habitaciones"}>HABITACIONES</Link>
          <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white " en to={"/servicios"}>SERVICIOS</Link>
         
          <Link className=" link rounded-md  px-3 py-2 text-sm font-medium text-white"  end to={`/hotel/${hotel[3].id}` }>SALON</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>
+         {
+          logeado.length>0?<Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>:""
+         }
+         
          
           </div>
         </div>
@@ -84,7 +87,10 @@ const Nav = () => {
 
              
       <Link  end to={`/hotel/${hotel[3].id}` }className="link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
-      <Link end to={"/admin"} className=" link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ADMINISTRACION</Link>
+      {
+        logeado.length>0?  <Link end to={"/admin"} className=" link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ADMINISTRACION</Link>:""
+      }
+    
     </div>
   </div>
 </nav>

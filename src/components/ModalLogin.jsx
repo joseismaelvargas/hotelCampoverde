@@ -12,7 +12,7 @@ export const ModalLogin=()=>{
      
      if(logearAdmin(data)){
           Nav("/admin")
-
+          location.reload()
          }else{
           alert("No existe esta Cuenta")
          }
