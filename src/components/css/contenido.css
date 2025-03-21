@@ -59,9 +59,7 @@
 .div>button:hover{
     background-color: rgb(233, 138, 30);
 }
-.section-hotel{
-    margin: 0px 2px;
-}
+
 
 li{
     font-weight: bold;
@@ -75,17 +73,22 @@ li{
 
     padding: 20px 10px;
 }
-.section-hotel>.services{
+.section-hotel{
+    width: 88%;
+    margin: 0px 5px;
+
+    color: rgb(44, 43, 43);
+}
+.services{
      width: 100%;
     color: rgb(255, 251, 251);
     padding: 10px;
-   background-color: rgb(255, 180, 41);
-}
-
+    margin: 20px;
+   background-color: rgb(255, 180, 41);}
 
 .section-hotel>p{
-    font-size: 22px;
-    color: #fffdfd;
+    font-size: 2px;
+    color: #3b3939;
   
     
 }
@@ -124,9 +127,14 @@ li{
     text-decoration: none;
     color: white;
 }
+.hotel{
+    margin: 20px -40px;
+  
+}
 .button:hover{
     background-color: rgb(238, 170, 45);
 }
+
 @media(min-width:558px){
     .section-hotel{
         margin: 0px  100px;
