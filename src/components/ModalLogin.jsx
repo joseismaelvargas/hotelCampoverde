@@ -1,7 +1,22 @@
 import "../components/css/login.css"
 import icoface from "/img/facebook-icon.svg"
 import icongoogle from "/img/google-icon.svg"
+import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
+import { logearAdmin } from "./js/queries"
+
 export const ModalLogin=()=>{
+    const { register, handleSubmit ,formState:{errors}} = useForm();
+     const Nav=useNavigate()
+  const Logear=(data)=>{
+     
+     if(logearAdmin(data)){
+          Nav("/admin")
+
+         }else{
+          alert("No existe esta Cuenta")
+         }
+     }
     return(
         <>
   
@@ -16,13 +31,22 @@ export const ModalLogin=()=>{
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
-        <form action="">
-            <label htmlFor="">Correo Electronico</label><br />
-            <input type="text" /><br />
-            <label htmlFor="">Contraseña</label>
+        <form action="" onSubmit={handleSubmit(Logear)}>
+            <label type="email "> Correo Electronico</label><br />
+            <input type="email" {...register("correo",{
+           required:"Agregue Su Correo",
+           minLength:{value:3,message:"Agregue un Correo valido"}
+           
+            })}/> <br />
+            { errors.correo &&<p className="errors">{errors.correo.message}</p>}
+            <label htmlFor="" >Contraseña</label>
             <br />
-            <input type="number" />
-        </form>
+            <input type="number" {...register("contraseña",{
+              required:"Agregue Contraseña",
+              minLength:{value:2,message:"Agregue una Contraseña valida"}
+            })}/>
+            { errors.contraseña &&<p  className="errors">{errors.contraseña.message}</p>}
+     
 
       <button
                   type="button"
@@ -48,13 +72,14 @@ export const ModalLogin=()=>{
                   />
                   Iniciar con Google
                 </button>
-               
-              
+                
+               <button  className="btn btn-success" type="submit">Iniciar</button>
+                </form>
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" className="btn btn-success">Iniciar</button>
-      </div>
+       
+      </div> 
+      
     </div>
   </div>
 </div>

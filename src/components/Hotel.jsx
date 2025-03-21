@@ -10,7 +10,7 @@ import { hotel } from './js/datosservices'
 const Hotel = () => {
    const [data,setData]=useState([])
    
-    const [loading,seetLoading]=useState(false)
+    
    const{id}=useParams()
     const num=Number(id)
     
@@ -25,7 +25,7 @@ const Hotel = () => {
     const filtrar = hotel.filter(item => item.id === id);
     if(filtrar.length>0){
       setData(filtrar) 
-      seetLoading(true)
+
     }else{
       console.log("error")
     }
@@ -35,7 +35,7 @@ const Hotel = () => {
 
   return (
     <main className='main'>
-     {/* <ReactLoading type='string' color='blue' ></ReactLoading> */}
+ 
     {
         data.map((item)=>
         <section className="hotel container" key={item.id}>

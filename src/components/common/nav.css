@@ -4,29 +4,23 @@
 }
 .link{
     font-weight: 400;
-    font-size: 16px;
-    text-decoration: none;
-
-    color: white;
+    font-size: 14px;
+    margin: 0px 0px;
 }
-.img-login{
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-}
-.button-login{
-    border-radius: 100%;
-}
-.button-login:hover{
-    border: solid rgb(207, 119, 19) 1px;
+.link:hover{
+    color: orange;
+    background-color: cadetblue;
 }
 @media  only screen and (max-width: 500px) {
    
     .imglogo{
-        width: 190px;
         margin: 0px 80px;
+        
     }
     .btn-menu{
       font-size: 30px;
     }
+}
+@media(min-width:768px){
+    
 }

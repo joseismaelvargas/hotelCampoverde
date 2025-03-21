@@ -34,9 +34,10 @@ const Nav = () => {
         <div className="hidden sm:ml-6 sm:block">
           <div className="flex space-x-4">
           
-         <Link  className="link  px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link>
+         <Link  className="link  px-3 py-2 text-sm font-medium text-white" en to={"/"}>HOTEL</Link> 
+         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/habitaciones"}>HABITACIONES</Link>
          <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white " en to={"/servicios"}>SERVICIOS</Link>
-         <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/fotos"}>FOTOS</Link>
+        
          <Link className=" link rounded-md  px-3 py-2 text-sm font-medium text-white"  end to={`/hotel/${hotel[3].id}` }>SALON</Link>
          <Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>
          
@@ -77,12 +78,13 @@ const Nav = () => {
   <div className={`${menu ? "block" : "hidden"} sm:hidden`} id="mobile-menu">
     <div className="space-y-1 px-2 pt-2 pb-3">
     
-      < Link end to={"/"} className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">HOTEL</Link>
-      <Link  end to={"/servicios"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SERVICIOS</Link>
-      <Link  end to={"/fotos"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">FOTOS</Link>
+      < Link end to={"/"} className="link  block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white" aria-current="page">HOTEL</Link>      
+      <Link  end to={"/habitaciones"} className="link  block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">HABITACIONES</Link>
+      <Link  end to={"/servicios"} className="link  block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SERVICIOS</Link>
+
              
-      <Link  end to={`/hotel/${hotel[3].id}` }className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
-      <Link end to={"/admin"} className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ADMINISTRACION</Link>
+      <Link  end to={`/hotel/${hotel[3].id}` }className="link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">SALON</Link>
+      <Link end to={"/admin"} className=" link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ADMINISTRACION</Link>
     </div>
   </div>
 </nav>

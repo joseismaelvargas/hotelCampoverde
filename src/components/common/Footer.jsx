@@ -21,10 +21,11 @@ const Footer = () => {
         <div className='menu-foooter' >
             <div className='div-link'>
               <Link end to={"/"} className='link-footer'>HOTEL</Link>
-              |
-           <Link end to={"/servicios"} className='link-footer'>SERVICIOS</Link>
+              | 
+              <Link end to={"/habiataciones"} className='link-footer'>HABITACIONES</Link>
+          
            |
-           <Link end to={"/fotos"} className='link-footer'>FOTOS</Link>
+           <Link end to={"/servicios"} className='link-footer'>SERVICIOS</Link>
            |
            <Link end to={`/hotel/${hotel[3].id}`} className='link-footer'>SALON</Link>
            |
