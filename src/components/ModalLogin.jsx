@@ -2,21 +2,25 @@ import "../components/css/login.css"
 import icoface from "/img/facebook-icon.svg"
 import icongoogle from "/img/google-icon.svg"
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router-dom"
-import { logearAdmin } from "./js/queries"
-
+import {  useNavigate } from "react-router-dom"
+import { logearUsuario } from "./js/queries"
 export const ModalLogin=()=>{
     const { register, handleSubmit ,formState:{errors}} = useForm();
      const Nav=useNavigate()
-  const Logear=(data)=>{
+const Logear=(data)=>{
+    const tipo=logearUsuario(data)
+    if (tipo === "admin") {
+      Nav("/admin");
+      location.reload();
+    } else if (tipo === "usuario") {
+      alert("Bienvenido usuario");
+      location.reload();
+    } else {
+      alert("Correo o contraseña incorrectos");
+    }
      
-     if(logearAdmin(data)){
-          Nav("/admin")
-          location.reload()
-         }else{
-          alert("No existe esta Cuenta")
-         }
-     }
+     
+    }
     return(
         <>
   

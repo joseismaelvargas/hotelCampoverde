@@ -5,11 +5,11 @@ import Basicos from "../cuartos/Basicos"
 import Premiun from "../cuartos/Premiun"
 import Junior from "../cuartos/Junior"
 import service3 from "/img/service3.jpg"
-export const Habitaciones = () => {
+export const Habitaciones = ({logeadoUser}) => {
 
    const[habitaciones,sethabitaciones]=useState(1)
      
-   const Suites=habitaciones==1?<Basicos></Basicos>:habitaciones==2?<Premiun></Premiun>:habitaciones==3?<Junior></Junior>:null
+   const Suites=habitaciones==1?<Basicos></Basicos>:habitaciones==2?<Premiun></Premiun>:habitaciones==3?<Junior logeado={logeadoUser} ></Junior>:null
   return (
    <main className="main">
    <section className="hotel ">
@@ -20,6 +20,7 @@ export const Habitaciones = () => {
               
                
                 </div>
+
                 <img src={service3} alt="" className="img-habitacion" />
 
 
@@ -35,7 +36,7 @@ export const Habitaciones = () => {
                <p>/</p>
                <p onClick={()=>sethabitaciones(3)} className={`${habitaciones===3?"btn-suites":""}`}>Suite Junior </p>
               </div>
-               <section>
+               <section className="container my-10 mx-auto">
                   {
                   Suites
                }

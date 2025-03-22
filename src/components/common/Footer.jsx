@@ -22,7 +22,7 @@ const Footer = ({logeado}) => {
             <div className='div-link'>
               <Link end to={"/"} className='link-footer'>HOTEL</Link>
               | 
-              <Link end to={"/habiataciones"} className='link-footer'>HABITACIONES</Link>
+              <Link end to={"/habitaciones"} className='link-footer'>HABITACIONES</Link>
           
            |
            <Link end to={"/servicios"} className='link-footer'>SERVICIOS</Link>

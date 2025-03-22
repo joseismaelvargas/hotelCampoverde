@@ -1,0 +1,30 @@
+.formulario{
+    width: 370px;
+    margin: 0px auto;
+    color: black;
+}
+.buttonenviar {
+    color: white;
+    padding: 15px ;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(221, 134, 21);
+}
+@media(min-width:558px){
+
+.formulario{
+    width: 600px;
+    color: black;
+    margin: 15px auto;
+    border: solid white 3px;
+    border-radius: 10px;
+}
+.buttonenviar {
+    color: white;
+    padding: 15px ;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(221, 134, 21);
+}
+
+}

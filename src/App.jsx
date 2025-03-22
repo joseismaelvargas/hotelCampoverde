@@ -7,12 +7,14 @@ import Hotel from "./components/Hotel"
 import { ModalLogin } from "./components/ModalLogin"
 import Habitaciones from "./components/page/Habitaciones"
 import Index from "./components/page"
+import Reservar from "./components/page/Reservar"
 import { useState } from "react"
 function App() {
-  const usuario=JSON.parse(sessionStorage.getItem("Hotel"))||[]
-  const [logeado,setlogeado]=useState(usuario)
+  const usuario=JSON.parse(sessionStorage.getItem("administrado"))||[]
 
- 
+  const [logeado,setlogeado]=useState(usuario)
+  const user=JSON.parse(sessionStorage.getItem("usuario"))||[]
+  const [logeadoUser,setlogeadoUser]=useState(user)
   return (
     <>
     <BrowserRouter>
@@ -23,9 +25,10 @@ function App() {
       <Route  path="/" element={<Index></Index>}></Route>
    
       <Route path="/admin" element={<Administrador></Administrador>}></Route>
-     <Route path="/habitaciones" element={<Habitaciones></Habitaciones>}></Route>
+     <Route path="/habitaciones" element={<Habitaciones logeadoUser={logeadoUser}></Habitaciones>}></Route>
       <Route path="/servicios" element={<Servicios></Servicios>}></Route>
       <Route path="/hotel/:id" element={<Hotel></Hotel>}></Route>
+      <Route path="/reservar" element={<Reservar></Reservar>}></Route>
       
     </Routes>
     <Footer logeado={logeado} setlogeado={setlogeado}></Footer>
