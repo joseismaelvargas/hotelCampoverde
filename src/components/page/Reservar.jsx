@@ -15,8 +15,8 @@ const Reservar = () => {
       let reserva={
           nombre:data.nombre,
           Dni:data.Dni,
-          entrada:data.fechaentrada,
-          salida:data.fechaesalida,
+          entrada:data.entrada,
+          salida:data.salida,
           personas:data.personas,
           tipo:data.opciones
 
@@ -56,7 +56,7 @@ const Reservar = () => {
       </FloatingLabel>
 
       <FloatingLabel label="Fecha Entrada" className='container my-3' >
-        <Form.Control type='date' placeholder='Fecha de Entrada' name='fechaentrada' {...register("fechaentrada",{
+        <Form.Control type='date' placeholder='Fecha de Entrada' name='entrada' {...register("entrada",{
             required:{value:true,message:"Ponga Fecha por favor"}
         })}/>
         <span className='text-danger' >{errors.fechaentrada&&errors.fechaentrada.message}</span> 
@@ -64,7 +64,7 @@ const Reservar = () => {
       
      
       <FloatingLabel label="Fecha Salida" className='container my-3' >
-        <Form.Control type='date' placeholder='Fecha de Salida' name='fechasalida' {...register("fechasalida",{
+        <Form.Control type='date' placeholder='Fecha de Salida' name='salida' {...register("salida",{
             required:{value:true,message:"Ponga Fecha por favor"}
         })}/>
         <span className='text-danger' >{errors.fechaesalida&&errors.fechaesalida.message}</span> 

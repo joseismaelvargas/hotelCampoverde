@@ -9,6 +9,8 @@ import Habitaciones from "./components/page/Habitaciones"
 import Index from "./components/page"
 import Reservar from "./components/page/Reservar"
 import { useState } from "react"
+import ProtegerRuta from "./components/routes/ProtegerRuta"
+import Protegerusuario from "./components/routes/Protegerusuario"
 function App() {
   const usuario=JSON.parse(sessionStorage.getItem("administrado"))||[]
 
@@ -23,12 +25,16 @@ function App() {
     <Routes>
    
       <Route  path="/" element={<Index></Index>}></Route>
-   
-      <Route path="/admin" element={<Administrador></Administrador>}></Route>
+
+      <Route path="/admin/*" element={   <ProtegerRuta><Administrador></Administrador>  </ProtegerRuta>}></Route>
+ 
+     
+  
+      
      <Route path="/habitaciones" element={<Habitaciones logeadoUser={logeadoUser}></Habitaciones>}></Route>
-      <Route path="/servicios" element={<Servicios></Servicios>}></Route>
+      <Route path="/servicios" element={ <Servicios></Servicios>}></Route>
       <Route path="/hotel/:id" element={<Hotel></Hotel>}></Route>
-      <Route path="/reservar" element={<Reservar></Reservar>}></Route>
+      <Route path="/reservar/*" element={<Protegerusuario><Reservar></Reservar></Protegerusuario>}></Route>
       
     </Routes>
     <Footer logeado={logeado} setlogeado={setlogeado}></Footer>
