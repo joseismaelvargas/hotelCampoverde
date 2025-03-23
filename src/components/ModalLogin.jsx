@@ -12,7 +12,7 @@ const Logear=(data)=>{
     const tipo=logearUsuario(data)
     if (tipo === "admin") {
       Nav("/admin");
-      location.reload();
+    
     } else if (tipo === "usuario") {
       alert("Bienvenido usuario");
       location.reload();
