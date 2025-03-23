@@ -48,7 +48,7 @@ form>input{
     width: 200px;
     display: flex;
     border-radius:10px ;
-    background-color: rgb(77, 77, 235);
+    background-color: rgb(50, 116, 202);
 }
 .logingoogle{
     text-align: center;
@@ -59,4 +59,8 @@ form>input{
     display: flex;
     border-radius:10px ;
     background-color: rgb(240, 240, 248);
+}
+.link-login{
+    margin: 10px;
+    font-size: 15px;
 }

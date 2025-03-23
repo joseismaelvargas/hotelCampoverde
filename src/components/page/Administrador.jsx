@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import { Link } from 'react-router-dom';
 const Administrador = () => {
   return (
    <main>
@@ -11,9 +12,9 @@ const Administrador = () => {
       <section className="container">
         <div className="d-flex justify-content-between my-3 py-2">
           <p className="fs-4">Tabla de Habitaciones</p>
-          <Button variant="primary" >
+          <Link end to={"/createHabitaciones"}><Button variant="primary" >
             Agregar Habitacion
-          </Button>
+          </Button></Link>
         </div>
       </section>
 
@@ -69,7 +70,7 @@ const Administrador = () => {
           <tr>
            <th>DNI</th>
             <th>Nombre</th>
-        ¿  <th>Habitacion</th>
+         <th>Habitacion</th>
             <th>Pagos</th>
             <th>Fechas Reservadas</th>
           </tr>

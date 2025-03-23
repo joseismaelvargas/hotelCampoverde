@@ -11,6 +11,8 @@ import Reservar from "./components/page/Reservar"
 import { useState } from "react"
 import ProtegerRuta from "./components/routes/ProtegerRuta"
 import Protegerusuario from "./components/routes/Protegerusuario"
+import AgregarUsuario from "./components/page/AgregarUsuario"
+import CrearHabitacion from "./components/page/CrearHabitacion"
 function App() {
   const usuario=JSON.parse(sessionStorage.getItem("administrado"))||[]
 
@@ -28,14 +30,14 @@ function App() {
 
       <Route path="/admin/*" element={   <ProtegerRuta><Administrador></Administrador>  </ProtegerRuta>}></Route>
  
-     
+     <Route path="/createHabitaciones/*" element={<ProtegerRuta><CrearHabitacion></CrearHabitacion></ProtegerRuta> }></Route>
   
       
      <Route path="/habitaciones" element={<Habitaciones logeadoUser={logeadoUser}></Habitaciones>}></Route>
       <Route path="/servicios" element={ <Servicios></Servicios>}></Route>
       <Route path="/hotel/:id" element={<Hotel></Hotel>}></Route>
       <Route path="/reservar/*" element={<Protegerusuario><Reservar></Reservar></Protegerusuario>}></Route>
-      
+      <Route path="/createuser" element ={<AgregarUsuario></AgregarUsuario>}></Route>
     </Routes>
     <Footer logeado={logeado} setlogeado={setlogeado}></Footer>
     </BrowserRouter>

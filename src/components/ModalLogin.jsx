@@ -4,6 +4,7 @@ import icongoogle from "/img/google-icon.svg"
 import { useForm } from "react-hook-form"
 import {  useNavigate } from "react-router-dom"
 import { logearUsuario } from "./js/queries"
+import { Link } from "react-router-dom"
 export const ModalLogin=()=>{
     const { register, handleSubmit ,formState:{errors}} = useForm();
      const Nav=useNavigate()
@@ -76,6 +77,8 @@ const Logear=(data)=>{
                   />
                   Iniciar con Google
                 </button>
+                <Link end to={"/createuser"} className="link-login" >¿Aún no estás registrado?  Crea tu cuenta gratuita aquí.</Link>
+                
                 
                <button  className="btn btn-success" type="submit">Iniciar</button>
                 </form>

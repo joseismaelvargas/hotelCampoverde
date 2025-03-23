@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import "../css/Formulario.css"
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import{ v4 as uuidv4}from'uuid'
+
 import Form from 'react-bootstrap/Form';
 
 
