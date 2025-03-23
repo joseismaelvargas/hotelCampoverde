@@ -54,6 +54,13 @@ const Reservar = () => {
         })}/>
         <span className='text-danger' >{errors.Dni&&errors.Dni.message}</span> 
       </FloatingLabel>
+      <FloatingLabel controlId="floatingPassword" label="email" className='container my-3'>
+        <Form.Control type="email" placeholder="Nombre de dueño"  name='Dni' {...register("correo",{
+            required:{value:true,message:"Este campo debe estar lleno"},
+            minLength:{value:3,message:"Ponga un correo valido"}
+        })}/>
+        <span className='text-danger' >{errors.correo&&errors.correo.message}</span> 
+      </FloatingLabel>
 
       <FloatingLabel label="Fecha Entrada" className='container my-3' >
         <Form.Control type='date' placeholder='Fecha de Entrada' name='entrada' {...register("entrada",{

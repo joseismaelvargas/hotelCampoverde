@@ -22,6 +22,11 @@
 .buttonlogear:hover{
     background-color: rgb(172, 92, 1);
 }
+.img-crear{
+  
+    width: 230px;
+    margin: 25px 70px;
+}
 @media(min-width:558px){
 
 .formulario{

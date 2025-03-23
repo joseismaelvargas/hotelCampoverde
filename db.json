@@ -1,0 +1,32 @@
+{
+  "usuarios": [
+    {
+      "user": "isma",
+      "nombre": "ismael vargas",
+      "contraseña": "03401122",
+      "correo": "isma@gmail.com",
+      "id": 1
+    },
+    {
+      "user": "jose",
+      "nombre": "jpse villafuerte",
+      "contraseña": "2222",
+      "correo": "isma@gmail.com",
+      "id": 2
+    },
+    {
+      "user": "jose",
+      "nombre": "jpse villafuerte",
+      "contraseña": "111",
+      "correo": "isma@gmail.com",
+      "id": 3
+    },
+    {
+      "user": "jose",
+      "nombre": "jpse villafuerte",
+      "contraseña": "eeee",
+      "correo": "isma@gmail.com",
+      "id": 4
+    }
+  ]
+}

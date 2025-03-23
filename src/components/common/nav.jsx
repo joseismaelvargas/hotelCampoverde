@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from "react-router-dom"
 import {hotel}from"../js/datosservices"
 
-const Nav = ({logeado}) => {
+const Nav = ({logeado,logeadoUser}) => {
     const [menu,setMenu]=useState(false)
   return (
     <nav className="navegador bg-gray-800">
@@ -66,7 +66,10 @@ const Nav = ({logeado}) => {
             aria-expanded="false" aria-haspopup="true">
               <span className="absolute -inset-1.5"></span>
               <span className="sr-only">Open user menu</span>
-              <img className="img-login " src="https://previews.123rf.com/images/yupiramos/yupiramos1610/yupiramos161007352/64369849-joven-hombre-aislado-avatar-icono-de-ilustraci%C3%B3n-vectorial-de-dise%C3%B1o.jpg" alt=""></img>
+              {logeadoUser.length>0? <img className="img-login " src="https://previews.123rf.com/images/yupiramos/yupiramos1610/yupiramos161007352/64369849-joven-hombre-aislado-avatar-icono-de-ilustraci%C3%B3n-vectorial-de-dise%C3%B1o.jpg" alt="logeado"></img>:
+         <img className="img-login " src="https://tse2.mm.bing.net/th?id=OIP.OWHqt6GY5jrr7ETvJr8ZXwHaHa&pid=Api&P=0&h=180" alt="logeado"></img>
+              }
+             
             </button>
           </div>
 

@@ -5,21 +5,39 @@ import { useForm } from "react-hook-form"
 import {  useNavigate } from "react-router-dom"
 import { logearUsuario } from "./js/queries"
 import { Link } from "react-router-dom"
+import Swal from 'sweetalert2'
 export const ModalLogin=()=>{
     const { register, handleSubmit ,formState:{errors}} = useForm();
      const Nav=useNavigate()
 const Logear=(data)=>{
     const tipo=logearUsuario(data)
     if (tipo === "admin") {
+      
+      Swal.fire({
+        title: "Good job!",
+        text: "Bienvenido Administrador",
+        icon: "success"
+      });
       Nav("/admin");
-    
       location.reload()
        
     } else if (tipo === "usuario") {
-      alert("Bienvenido usuario");
-      location.reload();
+      
+     
+      Nav("/")
+      location.reload(); 
+      Swal.fire({
+        title: "Good job!",
+        text: "Bienvenido Usuario",
+        icon: "success"
+      });
     } else {
-      alert("Correo o contraseña incorrectos");
+      Swal.fire({
+        title: 'Error!',
+        text: 'Error Contraseña o Correo incorrectos',
+        icon: 'error',
+       
+      })
     }
      
      

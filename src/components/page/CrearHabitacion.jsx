@@ -16,7 +16,7 @@ const CrearHabitacion = () => {
 
    
     <Form onSubmit={handleSubmit(agregarHabitacion)} className='formulario'>  
-        <img src={imglogo} alt="imglogo" className='w-[300px] my-10 mx-37' />
+        <img src={imglogo} alt="imglogo" className='img-crear' />
               <h3 className='text-center  text-white'>Agregar Habitaciones</h3>
         <Form.Select className='select  w-[500px]' aria-label="Default select example" aria-placeholder='Tipo de Habitacion' {...register("opciones", { required: true })}>
             <option value="Suite Premiun">Suite Premiun</option>

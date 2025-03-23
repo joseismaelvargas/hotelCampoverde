@@ -23,7 +23,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <Nav logeado={logeado} setlogeado={setlogeado}></Nav>
+    <Nav logeado={logeado} setlogeado={setlogeado} logeadoUser={logeadoUser}></Nav>
  <ModalLogin logeado={logeado } setlogeado={setlogeado}></ModalLogin>
     <Routes>
    
