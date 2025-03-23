@@ -17,13 +17,14 @@ function App() {
   const usuario=JSON.parse(sessionStorage.getItem("administrado"))||[]
 
   const [logeado,setlogeado]=useState(usuario)
+  
   const user=JSON.parse(sessionStorage.getItem("usuario"))||[]
   const [logeadoUser,setlogeadoUser]=useState(user)
   return (
     <>
     <BrowserRouter>
     <Nav logeado={logeado} setlogeado={setlogeado}></Nav>
- <ModalLogin></ModalLogin>
+ <ModalLogin logeado={logeado } setlogeado={setlogeado}></ModalLogin>
     <Routes>
    
       <Route  path="/" element={<Index></Index>}></Route>
