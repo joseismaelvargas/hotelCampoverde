@@ -5,11 +5,37 @@ import "../css/Formulario.css"
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import imglogo from "/img/logo.png"
+import { petticionAgregar } from '../js/peticionesHabitaciones';
+import Swal from 'sweetalert2';
 const CrearHabitacion = () => {
      const { register, handleSubmit ,formState:{errors}} = useForm();
 
-     const agregarHabitacion=()=>{
+     const agregarHabitacion=(data,e)=>{
+      e.preventDefault()
 
+      const habitacionCreada={
+        opciones:data.opciones,
+        info:data.info,
+        precio:data.precio
+      }
+      agregar(habitacionCreada)
+         Swal.fire({
+                          position: "top-center",
+                          icon: "success",
+                          title: "La habitacion fue creada con exito",
+                          showConfirmButton: false,
+                          timer: 500
+                        });
+     }
+     const agregar=async(habitacion)=>{
+      try{
+       const response=await petticionAgregar(habitacion)
+       if(response.status===201){
+           alert("HAbitacion Creadaa")
+       }
+      }catch(error){
+        console.error(error)
+      }
      }
   return (
     <main>
@@ -27,8 +53,8 @@ const CrearHabitacion = () => {
       <br />
 
       
-      <FloatingLabel controlId="floatingPassword" label="Info de Habitacion" className='container'>
-        <Form.Control type="text" placeholder="Info de Habitacion"  name='Dni' {...register("info",{
+      <FloatingLabel label="Info de Habitacion" className='container'>
+        <Form.Control type="text" placeholder="Info de Habitacion"  name='info' {...register("info",{
             required:{value:true,message:"Este campo debe estar lleno"},
             minLength:{value:3,message:"Ponga una info valida"}
         })}/>

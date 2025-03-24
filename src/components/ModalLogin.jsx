@@ -24,7 +24,7 @@ const Logear=(data)=>{
     } else if (tipo === "usuario") {
       
      
-      Nav("/")
+      Nav("/reservar")
       location.reload(); 
       Swal.fire({
         title: "Good job!",

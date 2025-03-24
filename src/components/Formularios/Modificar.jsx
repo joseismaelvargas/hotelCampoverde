@@ -1,65 +1,99 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import "../css/Formulario.css"
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import { peticionReserva } from '../js/reservas';
 import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import { useParams } from 'react-router-dom';
+import { URL_reservas } from '../js/reservas';
+import { modificarreserva } from '../js/reservas';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-const Reservar = () => {
-    const { register, handleSubmit ,formState:{errors}} = useForm();
-    const Nav=useNavigate()
+const Modificar = () => {
+      //  const[data,setdata]=useState()
+        const { register, handleSubmit ,formState:{errors},setValue} = useForm();
+        const{id}=useParams()
+        const idnumber=Number(id)
+
+ const Nav=useNavigate()
+
+const modificar=(data)=>{
+  
+   const reservaModificada={
+    nombre:data.nombre,
+    Dni:data.Dni,
+    corre:data.correo,
+    entrada:data.entrada,
+    salida:data.salida,
+    personas:data.personas,
+    tipo:data.opciones
+   } 
+ Swal.fire({
+                         position: "top-center",
+                        icon: "success",
+                        title: "Su Reserva ha sido Modificada con exito",
+                          showConfirmButton: false,
+                       timer: 5000
+                               });
+                   
+        
+   modificaradmin(reservaModificada,idnumber)
+
+}
 
 
-    const agregarReserva=(data)=>{
-
-         
-
-      let reservas={
-          nombre:data.nombre,
-          Dni:data.Dni,
-          corre:data.correo,
-          entrada:data.entrada,
-          salida:data.salida,
-          personas:data.personas,
-          tipo:data.opciones
-
-      }
-    
-      
-     agregarReservas(reservas)    
-
-      
-  }
-  const agregarReservas=async(reservas)=>{
-    try{
-   const respose=await peticionReserva(reservas)
-   
-    
-    Nav("/")
- 
-       Swal.fire({
-                  position: "top-center",
-                 icon: "success",
-                 title: "Su Reserva ha sido creada con exito",
-                   showConfirmButton: false,
-                timer: 500
-                        });
-      
- 
-
-
-    }catch(error){
-      console.log(error)
+const modificaradmin=async(reservaModificada,id)=>{
+  try{
+    const response=await (modificarreserva(reservaModificada,id))
+    if(response.status===200){
+         Nav("/admin") 
     }
-  }
-  return (
-  <>
-  <main>
+}catch{
+    console.error("error al modificar")
+}
+}
 
-    <p className='text-center'>Indica las fechas para ver la disponibilidad y los precios del alojamiento</p>
-    <Form onSubmit={handleSubmit(agregarReserva)} className='formulario'>  
-          <h3 className='text-center  text-white'>Reserva tu Habitacion</h3>
+
+
+
+
+
+
+
+
+
+   const buscarReserva=async(id)=>{
+    try{
+       const response=await fetch(URL_reservas)
+       if(response.status===200){
+        const data=await response.json()
+        console.log(data)
+         if(data.length>0){
+          const reservaencontrada= data.find((item)=>item.id===id)
+          setValue('nombre',reservaencontrada.nombre)
+          setValue('Dni',reservaencontrada.Dni)
+          setValue('correo',reservaencontrada.corre)
+          setValue('entrada',reservaencontrada.entrada)
+          setValue('salida',reservaencontrada.salida)
+          setValue('personas',reservaencontrada.personas)
+          setValue('opciones',reservaencontrada.tipo)
+          
+          
+          
+          
+         }
+       }
+    }catch(error){
+      console.error(error)
+    }
+   }
+   useEffect(()=>{
+    buscarReserva(idnumber)
+   },[idnumber])
+     
+  return (
+    <main>
+
+    <Form onSubmit={handleSubmit(modificar)} className='formulario'>  
+          <h3 className='text-center  text-white'>Modifica la Reserva</h3>
       <FloatingLabel
         controlId="floatingInput"
         label="Nombre y apellido"
@@ -117,14 +151,11 @@ const Reservar = () => {
             
           </Form.Select>
       <span className='text-danger' >{errors.opciones&&errors.opciones.message}</span> 
-      {/* <div className='d-flex justify-content-start '>
-        
-      </div> */}
+      
      <button className='buttonenviar  my-3' type='Submit'>Reservar Ahora</button>
       </Form>
   </main>
-  </>
   )
 }
 
-export default Reservar
+export default Modificar
