@@ -8,7 +8,7 @@ import { modificarreserva } from '../js/reservas';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 const Modificar = () => {
-      //  const[data,setdata]=useState()
+     
         const { register, handleSubmit ,formState:{errors},setValue} = useForm();
         const{id}=useParams()
         const idnumber=Number(id)
@@ -27,19 +27,15 @@ const modificar=(data)=>{
     tipo:data.opciones
    } 
  Swal.fire({
-                         position: "top-center",
-                        icon: "success",
-                        title: "Su Reserva ha sido Modificada con exito",
+                 position: "top-center",
+                 icon: "success",
+                  title: "Su Reserva ha sido Modificada con exito",
                           showConfirmButton: false,
-                       timer: 5000
+                  timer: 5000
                                });
-                   
-        
-   modificaradmin(reservaModificada,idnumber)
+                   modificaradmin(reservaModificada,idnumber)
 
 }
-
-
 const modificaradmin=async(reservaModificada,id)=>{
   try{
     const response=await (modificarreserva(reservaModificada,id))
@@ -50,16 +46,6 @@ const modificaradmin=async(reservaModificada,id)=>{
     console.error("error al modificar")
 }
 }
-
-
-
-
-
-
-
-
-
-
    const buscarReserva=async(id)=>{
     try{
        const response=await fetch(URL_reservas)

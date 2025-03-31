@@ -1,64 +1,91 @@
 
-import React from 'react'
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import "../css/Formulario.css"
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
-import imglogo from "/img/logo.png"
-import { petticionAgregar } from '../js/peticionesHabitaciones';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import { useParams } from 'react-router-dom';
+import { URL_habitaciones } from '../js/peticionesHabitaciones';
+import  imglogo from "/img/logo.png"
 import Swal from 'sweetalert2';
+import { modificarhabitaciones } from '../js/peticionesHabitaciones';
 import { useNavigate } from 'react-router-dom';
-const CrearHabitacion = () => {
-  
-     const { register, handleSubmit ,formState:{errors}} = useForm();
-
-     const Nav=useNavigate()
-
-     const agregarHabitacion=(data,e)=>{
-      e.preventDefault()
-
-     const habitacionCreada={
-        opciones:data.opciones,
-        info:data.info,
-        precio:Number(data.precio),
-        imagen1:data.img1,
-        imagen2:data.img2,
-        imagen3:data.img3
-      }
- 
-
-      agregar(habitacionCreada)
-         Swal.fire({
-                          position: "top-center",
-                          icon: "success",
-                          title: "La habitacion fue creada con exito",
-                          showConfirmButton: false,
-                          timer: 500
-                        });
-     }
+const ModificarHabitacion = () => {
 
 
+    const { register, handleSubmit ,formState:{errors},setValue} = useForm();
+       const{id}=useParams()
      
-     const agregar=async(habitacion)=>{
-      try{
-         const response=await petticionAgregar(habitacion)
+          
+     const Nav=useNavigate()
+    
 
-       if(response.status===201){
-           Nav("/admin")
-       }else{
-           alert("Error") 
-       }
-      }catch{
-        console.error("Error en la peticion")
-      }
+     const modificar=(data)=>{
+       
+        const reservaModificada={
+         opciones:data.opciones,
+         info:data.info,
+         imagen1:data.img1,
+         imagen2:data.img2,
+         imagen3:data.img3,
+         precio:Number(data.precio)
+        } 
+      Swal.fire({
+                      position: "top-center",
+                      icon: "success",
+                       title: "la habitacion ha sido Modificada con exito",
+                               showConfirmButton: false,
+                       timer: 5000
+                                    });
+                        modificaradmin(reservaModificada,id)
+     
      }
+     const modificaradmin=async(reservaModificada,id)=>{
+       try{
+         const response=await (modificarhabitaciones(reservaModificada,id))
+          console.log(response)
+         if(response.status===200){
+              Nav("/admin") 
+         }
+     }catch{
+         console.error("error al modificar")
+     }
+     }
+
+       const buscarhabitacion=async(id)=>{
+         try{
+            const response=await fetch(URL_habitaciones+"/crear")
+            if(response.status===200){
+             const data=await response.json()
+             console.log(data)
+              if(data.length>0){
+               const reservaencontrada= data.find((item)=>item._id===id)
+               setValue('opciones',reservaencontrada.opciones)
+               setValue('info',reservaencontrada.info)
+               setValue('img1',reservaencontrada.imagen1)
+               setValue('img2',reservaencontrada.imagen2)
+               setValue('img3',reservaencontrada.imagen3)
+               setValue('precio',reservaencontrada.precio)
+          
+               
+               
+               
+               
+              }
+            }
+         }catch(error){
+           console.error(error)
+         }
+        }
+        useEffect(()=>{
+         buscarhabitacion(id)
+        },[id])
   return (
     <main>
 
    
-    <Form onSubmit={handleSubmit(agregarHabitacion)} className='formulario'>  
+    <Form onSubmit={handleSubmit(modificar)} className='formulario'>  
         <img src={imglogo} alt="imglogo" className='img-crear' />
-              <h3 className='text-center  text-white'>Agregar Habitaciones</h3>
+              <h3 className='text-center  text-white'>Modificar Habitaciones</h3>
         <Form.Select className='select  w-[500px]' aria-label="Default select example" aria-placeholder='Tipo de Habitacion' {...register("opciones", { required: true })}>
             <option value="Suite Premiun">Suite Premiun</option>
             <option value="Suite Junior">Suite Junior</option>
@@ -69,7 +96,7 @@ const CrearHabitacion = () => {
 
       
       <FloatingLabel label="Info de Habitacion" className='container'>
-        <Form.Control type="text" placeholder="Info de Habitacion"  name='info' {...register("info",{
+        <Form.Control type="textarea" placeholder="Info de Habitacion"  name='info' {...register("info",{
             required:{value:true,message:"Este campo debe estar lleno"},
             minLength:{value:3,message:"Ponga una info valida"}
         })}/>
@@ -116,4 +143,4 @@ const CrearHabitacion = () => {
   )
 }
 
-export default CrearHabitacion
+export default ModificarHabitacion

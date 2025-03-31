@@ -2,51 +2,12 @@
   "habitaciones": [
     {
       "opciones": "Suite Premiun",
-      "info": "sdfdsdsffdsdfsdfs",
-      "precio": "33",
+      "info": "la mejor habitacion de todas",
+      "img1": "https://tse4.mm.bing.net/th?id=OIP.X32afwtV0tN6vSo4lgs2agHaE8&pid=Api&P=0&h=180",
+      "img2": "https://tse4.mm.bing.net/th?id=OIP.X32afwtV0tN6vSo4lgs2agHaE8&pid=Api&P=0&h=180",
+      "img3": "https://tse4.mm.bing.net/th?id=OIP.X32afwtV0tN6vSo4lgs2agHaE8&pid=Api&P=0&h=180",
+      "precio": "3433",
       "id": 1
-    },
-    {
-      "opciones": "Suite Premiun",
-      "info": "sfsdfdsdsd",
-      "precio": "34",
-      "id": 2
-    },
-    {
-      "opciones": "Suite Premiun",
-      "info": "3332323fdafdfsda",
-      "precio": "34454",
-      "id": 3
-    },
-    {
-      "opciones": "Suite Premiun",
-      "info": "fddsasfd",
-      "precio": "33",
-      "id": 4
-    },
-    {
-      "opciones": "Suite Estandar",
-      "info": "e3233",
-      "precio": "33",
-      "id": 5
-    },
-    {
-      "opciones": "Suite Junior",
-      "info": "eeefadssd",
-      "precio": "3332",
-      "id": 6
-    },
-    {
-      "opciones": "Suite Junior",
-      "info": "effasdfdsf",
-      "precio": "33",
-      "id": 7
-    },
-    {
-      "opciones": "Suite Estandar",
-      "info": "3fdfdsdfa",
-      "precio": "33",
-      "id": 8
     }
   ]
 }

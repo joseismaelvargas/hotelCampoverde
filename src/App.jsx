@@ -14,6 +14,7 @@ import Protegerusuario from "./components/routes/Protegerusuario"
 import AgregarUsuario from "./components/page/AgregarUsuario"
 import CrearHabitacion from "./components/page/CrearHabitacion"
 import Modificar from "./components/Formularios/Modificar"
+import ModificarHabitacion from "./components/Formularios/ModificarHabitacion"
 function App() {
   const usuario=JSON.parse(sessionStorage.getItem("administrado"))||[]
 
@@ -40,6 +41,7 @@ function App() {
       <Route path="/hotel/:id" element={<Hotel></Hotel>}></Route>
       <Route path="/reservar" element={<Protegerusuario><Reservar></Reservar></Protegerusuario>}></Route>
       <Route path="/createuser" element ={<AgregarUsuario></AgregarUsuario>}></Route>
+      <Route path="/modificarhabitaciones/:id/*" element={<ProtegerRuta><ModificarHabitacion></ModificarHabitacion></ProtegerRuta>}></Route>
     </Routes>
     <Footer logeado={logeado} setlogeado={setlogeado}></Footer>
     </BrowserRouter>
