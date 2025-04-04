@@ -9,8 +9,9 @@ import { URL_habitaciones } from '../js/peticionesHabitaciones';
 import { habitacionDelete } from '../js/peticionesHabitaciones';
 
 import Swal from 'sweetalert2';
+import { URL_Usuario } from '../js/queries';
 const Administrador = () => {
-  const [usuarios,setusuarios]=useState([])
+   const [usuarios,setUsuarios]=useState([])
   const [reservas,setREservas]=useState([])
   const [habitaciones,setHabitaciones]=useState([])
 
@@ -31,7 +32,8 @@ const Administrador = () => {
   
  const Apireserva=async()=>{
  try{
-  const response=await fetch(URL_reservas)
+  const response=await fetch(URL_reservas+"/verReservas")
+  console.log(response)
   if(response.status===200){
     const data=await response.json()
      setREservas(data)
@@ -45,10 +47,12 @@ const Administrador = () => {
  }
  const ApiUsuario=async()=>{
   try{
-   const response=await fetch(URL_reservas)
+   const response=await fetch(URL_Usuario+"/verusuarios")
+    console.log(response)
    if(response.status===200){
      const data=await response.json()
-      setusuarios(data)
+     
+      setUsuarios(data)
    }
   }
   catch(error){
@@ -231,7 +235,7 @@ const eliminarhabitacion=async(id)=>{
         <tbody>
          {
           reservas.map((item)=>
-            <tr key={item.id}>
+            <tr key={item._id}>
           <td>{item.Dni}</td>
           <td>{item.nombre}</td>
           <td>{item.tipo}</td>

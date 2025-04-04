@@ -22,6 +22,7 @@ function App() {
   
   const user=JSON.parse(sessionStorage.getItem("usuario"))||[]
   const [logeadoUser,setlogeadoUser]=useState(user)
+ 
   return (
     <>
     <BrowserRouter>

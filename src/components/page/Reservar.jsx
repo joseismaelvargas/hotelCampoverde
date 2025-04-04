@@ -2,41 +2,41 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import "../css/Formulario.css"
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import { peticionReserva } from '../js/reservas';
+import { petticionReservar } from '../js/reservas';
 import Form from 'react-bootstrap/Form';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { data, useNavigate } from 'react-router-dom';
 const Reservar = () => {
     const { register, handleSubmit ,formState:{errors}} = useForm();
     const Nav=useNavigate()
 
-
+   
     const agregarReserva=(data)=>{
 
          
 
       let reservas={
           nombre:data.nombre,
-          Dni:data.Dni,
+          Dni:Number(data.dni),
           corre:data.correo,
           entrada:data.entrada,
           salida:data.salida,
-          personas:data.personas,
+          personas:Number(data.personas),
           tipo:data.opciones
 
       }
     
-      
+      localStorage.setItem("reservo", JSON.stringify(data.dni) || []);
      agregarReservas(reservas)    
 
       
   }
   const agregarReservas=async(reservas)=>{
     try{
-   const respose=await peticionReserva(reservas)
+   const respose=await petticionReservar(reservas)
+   console.log(respose)
    
     
-    Nav("/")
  
        Swal.fire({
                   position: "top-center",
@@ -74,7 +74,7 @@ const Reservar = () => {
       </FloatingLabel>
       
       <FloatingLabel  label="DNI" className='container'>
-        <Form.Control type="Number" placeholder="Nombre de dueño"  name='Dni' {...register("Dni",{
+        <Form.Control type="Number" placeholder="Nombre de dueño"  name='Dni' {...register("dni",{
             required:{value:true,message:"Este campo debe estar lleno"},
             minLength:{value:3,message:"Ponga un Dni valido"}
         })}/>

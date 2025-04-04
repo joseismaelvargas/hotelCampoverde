@@ -1,7 +1,7 @@
 const URL_Usuario=import.meta.env.VITE_URL_USUARIO
 export const  agregarUsuario  =async(usuario)=>{
   try{
-  const response=await fetch(URL_Usuario,{
+  const response=await fetch(URL_Usuario+"/crearusuario",{
     method:"POST",
     headers:{
         "Content-Type": "application/json",

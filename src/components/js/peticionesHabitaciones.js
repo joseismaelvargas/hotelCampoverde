@@ -3,7 +3,7 @@ export const URL_habitaciones=import.meta.env.VITE_API_HABITACIONES
 
 export const petticionAgregar = async (habitacion) => {
    try {
-       console.log("Enviando datos:", habitacion); // 👈 Verifica lo que se está enviando
+       console.log("Enviando datos:", habitacion);
 
        const response = await fetch(URL_habitaciones+"/crear", {
            method: "POST",
