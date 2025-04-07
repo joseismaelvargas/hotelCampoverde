@@ -8,6 +8,7 @@ import imglogo from "/img/logo.png"
 import { petticionAgregar } from '../js/peticionesHabitaciones';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+
 const CrearHabitacion = () => {
   
      const { register, handleSubmit ,formState:{errors}} = useForm();

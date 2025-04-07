@@ -1,24 +1,8 @@
+
 export const URL_Usuario=import.meta.env.VITE_API_HABITACIONES
- let arrayUser=[]
- const ApiUsuario=async()=>{
-  try{
-   const response=await fetch(URL_Usuario+"/verusuarios")
-    console.log(response)
-   if(response.ok){
-     arrayUser=await response.json()
-    console.log(arrayUser)
-   }
-  }
-  catch(error){
-   console.error(error)
-  }
- 
- 
-  }
 
-ApiUsuario()
 
-console.log(arrayUser)
+
 const usuariosAdmin = {
    contraseña: "0340",
    correo: "isma@gmail.com"
@@ -29,30 +13,96 @@ const usuariosAdmin = {
    correo: "isma@gmail.com"
  }
 
+ export const usuarioDelete=async(id)=>{
+    try{
+           const response=await fetch(URL_Usuario+"/eliminarUsuario"+"/"+id,{
+              method:"DELETE"
+           })
+           if (!response.ok) {
+             const errorData = await response.json();
+             console.error("Error en el servidor:", errorData);
+         } else {
+             const data = await response.json();
+             console.log("Habitación agregada con éxito:", data);
+         }
+           return response
+        }catch(error){
+           console.log("Error al Borrar",error)
+        }
+ }
+ const addUser=async(usuario)=>{
+  try{
+  const response=await fetch(URL_Usuario+"/crearusuario",{
+    method:"POST",
+    headers:{
+        "Content-Type": "application/json",
 
+    },
+    body:JSON.stringify(usuario)
+  })
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error("Error en el servidor:", errorData);
+  }
+  return response;
+  }
+  catch(error){
+    console.error("Error al agregar usuario",error)
+  }
+}
+export default addUser
 
+export const editaUsuario=async(usuario,id)=>{
+ try{
+      const response=await fetch(URL_Usuario+"/editarUsuario"+"/"+id,{
+       method:"PUT",
+       headers:{
+          "Content-Type":"application/json"
+       },
+       body:JSON.stringify(usuario)
+      })     
+      return response
+    }catch(error){
+       console.log("error al modificar",error)
+    }
+}
 
  
+ export const logearUsuario =async (data) => {
+   try{
+   const response=await fetch(URL_Usuario+"/verusuarios")
+    console.log(response)
+   if(response.ok){
+     let datausuarios =await response.json()
+         
+     const usuario=datausuarios.find((item)=>item.correo===data.correo)
  
- export const logearUsuario = (data) => {
-    const usuario=arrayUser.find((item)=>item.correo===data.correo)
-    const contraseña=arrayUser.find((item)=>item.contraseña===data.contraseña)
- 
-   if (
-     data.contraseña === usuariosAdmin.contraseña &&
-     data.correo.toLowerCase() === usuariosAdmin.correo.toLowerCase()
-   ) {
-     sessionStorage.setItem("administrado", JSON.stringify(usuariosAdmin.correo));
-     return "admin";
-   } else if (
-     data.contraseña === contraseña.contraseña&&
-     data.correo.toLowerCase() === usuario.correo
-   ) {
-     sessionStorage.setItem("usuario", JSON.stringify(user.correo));
+
+  
+       
+       if (
+       data.correo.toLowerCase() === usuariosAdmin.correo.toLowerCase()
+      ) {
+       sessionStorage.setItem("administrado", JSON.stringify(usuariosAdmin.correo));
+       return "admin";
+  } else if (
+       
+      data.correo === usuario.correo
+     ) {
+       sessionStorage.setItem("usuario", JSON.stringify(user.correo));
      return "usuario";
-   } else {
+     } else {
      console.log("Credenciales incorrectas");
-     return false;
+      return false;
+    }
    }
+  }
+  catch(error){
+   console.error(error)
+  }
+ 
+  
+    
+  
  };
  

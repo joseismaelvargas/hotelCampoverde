@@ -59,3 +59,18 @@ export const modificarhabitaciones=async(habitacion,id)=>{
        console.log("error al modificar",error)
     }
  }
+
+ export const AgregarReserva=async(id,reserva)=>{
+    try{
+      const response=await fetch(URL_habitaciones+"/reservarhabitacion"+'/'+id,{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+       body:JSON.stringify(reserva)
+      })
+      return response
+    }catch(error){
+        console.log("Error al algregarReserva",error)
+    }
+ }

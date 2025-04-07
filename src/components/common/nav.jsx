@@ -40,6 +40,9 @@ const Nav = ({logeado,logeadoUser}) => {
         
          <Link className=" link rounded-md  px-3 py-2 text-sm font-medium text-white"  end to={`/hotel/${hotel[3].id}` }>SALON</Link>
          {
+          logeadoUser.length>0?  <Link  className="link rounded-md  px-3 py-2 text-sm font-medium text-white " en to={"/verReserva"}>MIS RESERVAS</Link>:null
+         }
+         {
           logeado.length>0?<Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>:""
          }
          
@@ -93,6 +96,9 @@ const Nav = ({logeado,logeadoUser}) => {
       {
         logeado.length>0?  <Link end to={"/admin"} className=" link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ADMINISTRACION</Link>:""
       }
+        {
+          logeadoUser.length>0?  <Link className="link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"end to={"/verReserva"}>MIS RESERVAS</Link>:null
+         }
     
     </div>
   </div>

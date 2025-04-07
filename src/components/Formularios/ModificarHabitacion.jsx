@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 const ModificarHabitacion = () => {
 
 
+  
     const { register, handleSubmit ,formState:{errors},setValue} = useForm();
        const{id}=useParams()
      

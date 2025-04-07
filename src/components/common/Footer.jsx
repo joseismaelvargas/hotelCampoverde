@@ -7,7 +7,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { hotel } from '../js/datosservices';
 
-const Footer = ({logeado}) => {
+const Footer = ({logeado,logeadoUser}) => {
   return (
     <>
     <footer className='footer-contenido'>
@@ -21,19 +21,22 @@ const Footer = ({logeado}) => {
         <div className='menu-foooter' >
             <div className='div-link'>
               <Link end to={"/"} className='link-footer'>HOTEL</Link>
-              | 
-              <Link end to={"/habitaciones"} className='link-footer'>HABITACIONES</Link>
+              
+              <Link end to={"/habitaciones"} className='link-footer'>| HABITACIONES</Link>
           
-           |
-           <Link end to={"/servicios"} className='link-footer'>SERVICIOS</Link>
-           {
-            logeado.length>0?   <Link  end to={"/admin"}className='link-footer'>| ADMINISTRACION</Link>:""
-           }
-           |
-           <Link end to={`/hotel/${hotel[3].id}`} className='link-footer'>SALON</Link>
-           |
+          
+           <Link end to={"/servicios"} className='link-footer'> | SERVICIOS</Link>
+     
+           <Link end to={`/hotel/${hotel[3].id}`} className='link-footer'>| SALON</Link>
            
-         
+           
+          {
+            logeado.length>0?   <Link  end to={"/admin"}className='link-footer'> ADMINISTRACION</Link>:""
+           }
+        
+           {
+            logeadoUser.length>0?<Link  end to={"/verReserva"}className='link-footer'>| MiS RESERVAS</Link>:null
+           }
             </div>
            
            <div>

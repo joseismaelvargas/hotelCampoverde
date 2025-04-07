@@ -1,0 +1,52 @@
+.contenido{
+    display: flex;
+    flex-direction: column;
+}
+.medios-depago{
+    display: flex;
+  
+    
+}
+.tarjetacarasteristica{
+    width: 70px;
+    margin: 0px 10px;
+}
+.buttonreservar{
+    margin: 30px auto;
+    background-color: rgba(160, 96, 13, 0.904);
+    padding: 15px 10px;
+    font-size: 26px;
+    border-radius: 15px;
+    border: solid 1px white;
+    font-weight: bold;
+    width: 100%;
+}
+.buttonreservar:hover{
+    background-color: orange;
+}
+.porcentaje{
+    padding: 4px 5px;
+    font-size: 26px;
+    border-radius: 10px;
+    background-color: orange;
+    margin: 0px 10px;
+    color: white;
+}
+.mas-info{
+    font-size: 25px;
+}
+.descuento{
+    font-size: 400;
+    font-size: 30px;
+    color: rgb(165, 168, 170);
+    
+   
+}
+.precio{
+    font-weight: 400;
+    font-size: 35px;
+}
+.medios{
+    font-size: 25px;
+    font-weight: bold;
+}

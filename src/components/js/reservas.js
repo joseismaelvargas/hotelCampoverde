@@ -31,7 +31,7 @@ export const petticionReservar = async (habitacion) => {
 export const modificarreserva=async(habitacion,id)=>{
 
     try{
-      const response=await fetch(URL_reservas+"/"+id,{
+      const response=await fetch(`${URL_reservas}/editarReserva/${id}`,{
        method:"PUT",
        headers:{
           "Content-Type":"application/json"
@@ -45,7 +45,7 @@ export const modificarreserva=async(habitacion,id)=>{
  }
  export const borrarReserva=async(id)=>{
     try{
-       const response=await fetch(URL_reservas+"/"+id,{
+       const response=await fetch(`${URL_reservas}/borrarReserva/${id}`,{
           method:"DELETE"
        })
        return response

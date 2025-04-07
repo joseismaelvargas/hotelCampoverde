@@ -1,15 +1,19 @@
 
-import { useState } from "react"
+import { useState,useEffect} from "react"
 import "../css/contenido.css"
 import Basicos from "../cuartos/Basicos"
 import Premiun from "../cuartos/Premiun"
 import Junior from "../cuartos/Junior"
 import service3 from "/img/service3.jpg"
+import { URL_habitaciones } from "../js/peticionesHabitaciones"
 export const Habitaciones = ({logeadoUser}) => {
 
    const[habitaciones,sethabitaciones]=useState(1)
-     
-   const Suites=habitaciones==1?<Basicos></Basicos>:habitaciones==2?<Premiun></Premiun>:habitaciones==3?<Junior logeado={logeadoUser} ></Junior>:null
+
+
+     const Suites=habitaciones==1?<Basicos logeado={logeadoUser}></Basicos>:habitaciones==2?<Premiun logeado={logeadoUser}></Premiun>:habitaciones==3?<Junior logeado={logeadoUser} ></Junior>:null
+            
+ 
   return (
    <main className="main">
    <section className="hotel ">

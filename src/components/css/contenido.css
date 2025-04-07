@@ -126,7 +126,7 @@ li{
  
 }
 .contactos{
-  
+   
     margin: 30px 50px;
     width: 360px;
     background-color: white;
@@ -203,7 +203,7 @@ li{
         justify-content: center;
     }
     .contactos{
-        height: 330px;
+        height: 350px;
         width: 300px;
     }
     .contactos>p{
