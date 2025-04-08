@@ -42,6 +42,7 @@ const Nav = ({logeado,logeadoUser}) => {
          {
           logeado.length>0?<Link  className=" link rounded-md  px-3 py-2 text-sm font-medium text-white" en to={"/admin"}>ADMINISTRACION</Link>:""
          }
+           <Link className=" link rounded-md  px-3 py-2 text-sm font-medium text-white"  end to={"/verCuarto"}>cuarto</Link>
          
          
           </div>
