@@ -5,10 +5,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const Verhabitacion = () => {
   return (
     <main >
-      <section className='container'>
+      <section className='contenidos container'>
          <div className='contenido'>
-      <div>
-      <Swiper modules={[Autoplay, Navigation,Pagination]}
+          <div className='div-img '>
+         <Swiper modules={[Autoplay, Navigation,   Pagination]}
               slidesPerView={1} 
               spaceBetween={0} 
             
@@ -21,32 +21,30 @@ const Verhabitacion = () => {
               }}
             loop={true} >
                     <SwiperSlide>
-                        <img src="https://tse3.mm.bing.net/th?id=OIP.gKZDRXD7F1POl22eSkazVQHaE8&pid=Api&P=0&h=180" alt="hotel" className="img-index" /> 
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.gKZDRXD7F1POl22eSkazVQHaE8&pid=Api&P=0&h=180" alt="hotel" className="img-cuarto" /> 
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://tse3.mm.bing.net/th?id=OIP.gKZDRXD7F1POl22eSkazVQHaE8&pid=Api&P=0&h=180" alt="hotel" className="img-index" /> 
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.gKZDRXD7F1POl22eSkazVQHaE8&pid=Api&P=0&h=180" alt="hotel" className="img-cuarto" /> 
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://tse3.mm.bing.net/th?id=OIP.gKZDRXD7F1POl22eSkazVQHaE8&pid=Api&P=0&h=180" alt="hotel" className="img-index" /> 
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.gKZDRXD7F1POl22eSkazVQHaE8&pid=Api&P=0&h=180" alt="hotel" className="img-cuarto" /> 
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://tse3.mm.bing.net/th?id=OIP.gKZDRXD7F1POl22eSkazVQHaE8&pid=Api&P=0&h=180" alt="hotel" className="img-index" /> 
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://tse3.mm.bing.net/th?id=OIP.gKZDRXD7F1POl22eSkazVQHaE8&pid=Api&P=0&h=180" alt="hotel" className="img-index" /> 
-                    </SwiperSlide>
+                   
                   </Swiper>
                   <div>
-                    <h3>Suite Junior</h3>
+                    
                     <p className='info'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed possimus aperiam enim autem doloremque vel, omnis, reiciendis, velit cum ratione laboriosam ab. Fugit, quidem nisi tempore necessitatibus corporis dolorem esse.</p>
                   
                
                   </div>
-                  <hr />
-                  
-      </div>
+                 
+                 <hr />
+      </div> 
+      <div class="separador"> </div>
       <div className='detalles'>
-      
+            <div className='div-detalles'>
+
+           <h3 className='tipo'>Suite Junior</h3>
             <p className='mas-info'>Placard 6P 4C Nordico 176X47X180 Miel/Blanco Muebles Gacela</p>
              <p className='descuento'><strong className='porcentaje'>%20</strong><del>$24.000</del> </p>
            <p className='precio'> $500.00</p>
@@ -67,7 +65,7 @@ const Verhabitacion = () => {
               
 
              
-          
+           </div>
        
       </div>
     </div>  

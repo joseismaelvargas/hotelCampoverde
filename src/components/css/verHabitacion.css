@@ -1,11 +1,17 @@
 .contenido{
     display: flex;
     flex-direction: column;
+    margin: 20px auto;
 }
 .medios-depago{
     display: flex;
   
     
+}
+.img-cuarto{
+    width: 100%;
+    border-radius: 10px;
+
 }
 .tarjetacarasteristica{
     width: 70px;
@@ -33,7 +39,8 @@
     color: white;
 }
 .mas-info{
-    font-size: 25px;
+    font-size: 22px;
+
 }
 .descuento{
     font-size: 400;
@@ -49,4 +56,81 @@
 .medios{
     font-size: 25px;
     font-weight: bold;
+}
+.info{
+    margin: 0px auto;
+    font-size: 19px;
+    width: auto;
+  
+}
+.tipo{
+    font-weight: bold;
+    text-align: center;
+    font-size: 36px;
+    margin: 10px;
+    font-weight: bold;
+    color: rgb(197, 100, 8);
+}
+@media(min-width:758px){
+    
+  .contenido{
+    margin: 40px auto;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    
+    
+  }
+  .separador {
+    border-left: 3px solid #ffffff; 
+    padding-left: 20px; 
+    margin-left: 20px; 
+    margin: 0px 20px;
+  }
+ 
+  .tarjetacarasteristica{
+    width: 400px;
+  }
+  .descuento{
+    margin: 20px;
+  }
+  .mas-info{
+    font-size: 26px;
+    margin: 10px;
+    width: 400px;
+  }
+  .tipo{
+    text-align: start;
+    font-size: 35px;
+  }
+  .info{
+    margin: 20px;
+    font-size: 22px;
+  }
+  .medios-depago{
+    margin: 20px;
+  }
+  .div-img{
+    width: 600px;
+    /* border: solid red; */
+    margin: 0px 0px;
+  }
+  
+  .detalles{
+
+      text-align: start;
+  }
+  .div-detalles{
+    margin: 20px;
+  }
+  .buttonreservar{
+    width: 300px;
+    
+  }
+  
+  .img-cuarto{
+    /* margin: 60px; */
+    width: 600px;
+    height: 350px;
+  }
 }
