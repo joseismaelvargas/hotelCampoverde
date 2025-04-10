@@ -15,14 +15,18 @@ import AgregarUsuario from "./components/page/AgregarUsuario"
 import CrearHabitacion from "./components/page/CrearHabitacion"
 import Modificar from "./components/Formularios/Modificar"
 import ModificarHabitacion from "./components/Formularios/ModificarHabitacion"
-import { Verhabitacion } from "./components/verhabitacion"
+import ModificarUsuario from "./components/Formularios/ModuficarUsuario"
+import Verhabitacion from "./components/cuartos/Verhabitacion"
+import Verreservas from "./components/page/Verreservas"
 function App() {
   const usuario=JSON.parse(sessionStorage.getItem("administrado"))||[]
 
   const [logeado,setlogeado]=useState(usuario)
   
   const user=JSON.parse(sessionStorage.getItem("usuario"))||[]
+  console.log(typeof(user))
   const [logeadoUser,setlogeadoUser]=useState(user)
+ console.log(logeadoUser)
   return (
     <>
     <BrowserRouter>
@@ -31,21 +35,20 @@ function App() {
     <Routes>
    
       <Route  path="/" element={<Index></Index>}></Route>
-
       <Route path="/admin/*" element={   <ProtegerRuta><Administrador></Administrador>  </ProtegerRuta>}></Route>
- 
-     <Route path="/createHabitaciones/*" element={<ProtegerRuta><CrearHabitacion></CrearHabitacion></ProtegerRuta> }></Route>
-  
+      <Route path="/createHabitaciones/*" element={<ProtegerRuta><CrearHabitacion></CrearHabitacion></ProtegerRuta> }></Route>
       <Route path="/modificarreserva/:id/*" element={<ProtegerRuta><Modificar></Modificar></ProtegerRuta>}></Route>
      <Route path="/habitaciones" element={<Habitaciones logeadoUser={logeadoUser}></Habitaciones>}></Route>
-      <Route path="/servicios" element={<Servicios></Servicios> }></Route>
+      <Route path="/servicios" element={ <Servicios></Servicios>}></Route>
+      <Route path='/verHabitacion/:id/*' element={<Verhabitacion logeadoUser={logeadoUser}></Verhabitacion>}></Route>
       <Route path="/hotel/:id" element={<Hotel></Hotel>}></Route>
-      <Route path="/reservar" element={<Protegerusuario><Reservar></Reservar></Protegerusuario>}></Route>
+      <Route path="/reservar/:id/*" element={<Protegerusuario><Reservar></Reservar></Protegerusuario>}></Route>
       <Route path="/createuser" element ={<AgregarUsuario></AgregarUsuario>}></Route>
       <Route path="/modificarhabitaciones/:id/*" element={<ProtegerRuta><ModificarHabitacion></ModificarHabitacion></ProtegerRuta>}></Route>
-     <Route path=" /verCuarto" element={<Verhabitacion></Verhabitacion>}></Route>
+       <Route path="/modificarUsuario/:id/*" element={<ProtegerRuta> <ModificarUsuario></ModificarUsuario></ProtegerRuta>}></Route>
+     <Route path="/verReserva/*" element={<Protegerusuario> <Verreservas></Verreservas></Protegerusuario>}></Route>
     </Routes>
-    <Footer logeado={logeado} setlogeado={setlogeado}></Footer>
+    <Footer logeado={logeado} setlogeado={setlogeado} logeadoUser={logeadoUser}></Footer>
     </BrowserRouter>
    
        

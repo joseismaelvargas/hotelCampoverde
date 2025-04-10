@@ -6,12 +6,16 @@ import {  useNavigate } from "react-router-dom"
 import { logearUsuario } from "./js/queries"
 import { Link } from "react-router-dom"
 import Swal from 'sweetalert2'
+import React,{useState} from "react"
 export const ModalLogin=()=>{
     const { register, handleSubmit ,formState:{errors}} = useForm();
      const Nav=useNavigate()
-const Logear=(data)=>{
-    const tipo=logearUsuario(data)
-    if (tipo === "admin") {
+
+
+const Logear=async(data)=>{
+    const tipo=await logearUsuario(data)
+  console.log(tipo)
+    if (tipo==="admin") {
       
       Swal.fire({
         title: "Good job!",
@@ -21,16 +25,17 @@ const Logear=(data)=>{
       Nav("/admin");
       location.reload()
        
-    } else if (tipo === "usuario") {
+    } else if (tipo==="usuario") {
       
-     
-      Nav("/reservar")
-      location.reload(); 
+      
+    
       Swal.fire({
         title: "Good job!",
         text: "Bienvenido Usuario",
         icon: "success"
       });
+      Nav("/");
+      location.reload()
     } else {
       Swal.fire({
         title: 'Error!',
@@ -66,7 +71,7 @@ const Logear=(data)=>{
             { errors.correo &&<p className="errors">{errors.correo.message}</p>}
             <label htmlFor="" >Contraseña</label>
             <br />
-            <input type="number" {...register("contraseña",{
+            <input type="text" {...register("contraseña",{
               required:"Agregue Contraseña",
               minLength:{value:2,message:"Agregue una Contraseña valida"}
             })}/>

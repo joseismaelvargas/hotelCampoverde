@@ -1,0 +1,156 @@
+.contenido{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+.medios-depago{
+    display: flex;
+  
+    
+}
+.img-cuarto{
+    width: 100%;
+    border-radius: 10px;
+
+}
+.tarjetacarasteristica{
+    width: 70px;
+    margin: 0px 10px;
+}
+.containerload{
+  width: 450px;
+  display: flex;
+ justify-content: center;
+  height: 450px;
+}
+.gifload{
+  margin: 140px auto;
+  width: 200px;
+  height: 200px;
+
+}
+.buttonreservar{
+    margin: 30px auto;
+    background-color: rgba(160, 96, 13, 0.904);
+    padding: 15px 10px;
+    font-size: 26px;
+    border-radius: 15px;
+    border: solid 1px white;
+    font-weight: bold;
+    width: 100%;
+}
+.buttonreservar:hover{
+    background-color: orange;
+}
+.porcentaje{
+    padding: 4px 5px;
+    font-size: 26px;
+    border-radius: 10px;
+    background-color: orange;
+    margin: 0px 10px;
+    color: white;
+}
+.mas-info{
+    font-size: 22px;
+
+}
+.descuento{
+    font-size: 400;
+    font-size: 30px;
+    color: rgb(165, 168, 170);
+    
+   
+}
+.precio{
+    font-weight: 400;
+    font-size: 35px;
+}
+.medios{
+    font-size: 25px;
+    font-weight: bold;
+}
+.info{
+    margin: 0px auto;
+    font-size: 19px;
+    width: auto;
+  
+}
+.tipo{
+    font-weight: bold;
+    text-align: center;
+    font-size: 36px;
+    margin: 10px;
+    font-weight: bold;
+    color: rgb(197, 100, 8);
+}
+@media(min-width:758px){
+    
+  .contenido{
+    margin: 40px auto;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    
+    
+  }
+  .separador {
+    border-left: 3px solid #ffffff; 
+    padding-left: 20px; 
+    margin-left: 20px; 
+    margin: 0px 20px;
+  }
+ 
+  .tarjetacarasteristica{
+    width: 400px;
+  }
+  .containerload {
+
+    margin: 0px auto;
+  }
+  .gifload{
+    width: 80px;
+    height: 80px;
+  }
+  .descuento{
+    margin: 20px;
+  }
+  .mas-info{
+    font-size: 26px;
+    margin: 10px;
+    width: 400px;
+  }
+  .tipo{
+    text-align: start;
+    font-size: 35px;
+  }
+  .info{
+    margin: 20px;
+    font-size: 22px;
+  }
+  .medios-depago{
+    margin: 20px;
+  }
+  .div-img{
+    width: 600px;
+    /* border: solid red; */
+    margin: 0px 0px;
+  }
+  
+  .detalles{
+
+      text-align: start;
+  }
+  .div-detalles{
+    margin: 20px;
+  }
+  .buttonreservar{
+    width: 300px;
+    
+  }
+  
+  .img-cuarto{
+    /* margin: 60px; */
+    width: 600px;
+    height: 350px;
+  }
+}
