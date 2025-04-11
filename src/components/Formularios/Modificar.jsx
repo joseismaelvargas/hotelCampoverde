@@ -7,7 +7,8 @@ import { URL_reservas } from '../js/reservas';
 import { modificarreserva } from '../js/reservas';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-const Modificar = () => {
+const Modificar = ({usuario,logeado}) => {
+  console.log(usuario)
      
         const { register, handleSubmit ,formState:{errors},setValue} = useForm();
         const{id}=useParams()
@@ -27,6 +28,8 @@ const modificar=(data)=>{
     personas:Number(data.personas),
     tipo:data.opciones
    } 
+
+
  Swal.fire({
                  position: "top-center",
                  icon: "success",
@@ -42,8 +45,13 @@ const modificaradmin=async(reservaModificada,id)=>{
     console.log(reservaModificada)
     const response=await (modificarreserva(reservaModificada,id))
     console.log(response)
+  
     if(response.status===200){
-         Nav("/admin") 
+      if(usuario.length>0){
+        Nav("/verReserva")
+      }else{
+        Nav("/admin")
+      }
     }
 }catch{
     console.error("error al modificar")
@@ -59,7 +67,7 @@ const modificaradmin=async(reservaModificada,id)=>{
          if(data.length>0){
           const reservaencontrada= data.find((item)=>item._id===id)
           setValue('nombre',reservaencontrada.nombre)
-          setValue('Dni',reservaencontrada.Dni)
+          setValue('dni',reservaencontrada.Dni)
           setValue('corre',reservaencontrada.corre)
           setValue('entrada',reservaencontrada.entrada)
           setValue('salida',reservaencontrada.salida)
@@ -98,7 +106,7 @@ const modificaradmin=async(reservaModificada,id)=>{
       </FloatingLabel>
       
       <FloatingLabel  label="DNI" className='container'>
-        <Form.Control type="Number" placeholder="Nombre de dueño"  name='Dni' {...register("dni",{
+        <Form.Control type="Number" placeholder="Nombre de dueño"  name='dni' {...register("dni",{
             required:{value:true,message:"Este campo debe estar lleno"},
             minLength:{value:3,message:"Ponga un Dni valido"}
         })}/>
@@ -142,7 +150,7 @@ const modificaradmin=async(reservaModificada,id)=>{
           </Form.Select>
       <span className='text-danger' >{errors.opciones&&errors.opciones.message}</span> 
       
-     <button className='buttonenviar  my-3' type='Submit'>Reservar Ahora</button>
+     <button className='buttonenviar  my-3' type='Submit'>Modificar</button>
       </Form>
   </main>
   )

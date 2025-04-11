@@ -31,12 +31,14 @@
 }
 .buttonreservar{
     margin: 30px auto;
-    background-color: rgba(160, 96, 13, 0.904);
+    background-color: rgba(223, 132, 14, 0.904);
     padding: 15px 10px;
     font-size: 26px;
     border-radius: 15px;
     border: solid 1px white;
+    color: white;
     font-weight: bold;
+    text-decoration: none;
     width: 100%;
 }
 .buttonreservar:hover{
@@ -52,7 +54,8 @@
 }
 .mas-info{
     font-size: 22px;
-
+    font-weight: 300;
+  color: rgb(187, 180, 180);
 }
 .descuento{
     font-size: 400;
@@ -81,7 +84,7 @@
     font-size: 36px;
     margin: 10px;
     font-weight: bold;
-    color: rgb(197, 100, 8);
+    color: rgb(238, 132, 33);
 }
 @media(min-width:758px){
     
@@ -114,14 +117,20 @@
   .descuento{
     margin: 20px;
   }
-  .mas-info{
-    font-size: 26px;
+  /* .mas-info{
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--color-red-800);
     margin: 10px;
     width: 400px;
-  }
+  } */
+   .mas-info{
+    font-size: 33px;
+   }
   .tipo{
     text-align: start;
-    font-size: 35px;
+    font-weight: bold;
+    font-size: 45px;
   }
   .info{
     margin: 20px;

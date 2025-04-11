@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 import { AgregarReserva } from '../js/peticionesHabitaciones';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-const Reservar = () => {
+const Reservar = ({logeado,logeadoUser}) => {
     const { register, handleSubmit ,formState:{errors}} = useForm();
     const [habitacion,setFechaReservada]=useState({})
     const Nav=useNavigate()
@@ -74,21 +74,21 @@ APiHAbitaciones(id)
           fechaEntrada:data.entrada,
           fechaSalida:data.salida
         }
-        sessionStorage.setItem("reservacion", JSON.stringify(data.dni));
-        localStorage.setItem("mi-reserva", JSON.stringify({
-         nombre:data.nombre,
-         entrada:data.entrada,
-         tipo:data.opciones
-        }));
-      petticionagreagar(id,habitaciones)
+      
+      
+
+
+      
+      petticionagreagar(id,habitaciones,data.correo)
      agregarReservas(reservas)    
 
      
         
     }
 
-const petticionagreagar=async(id,reserva)=>{
+const petticionagreagar=async(id,reserva,data)=>{
     try{
+        localStorage.setItem("correo",JSON.stringify(data))
       const response=await fetch(AgregarReserva(id,reserva))
      console.log(response)
     }catch{
@@ -170,17 +170,15 @@ const petticionagreagar=async(id,reserva)=>{
       </FloatingLabel>
       
      
-      <FloatingLabel label="Fecha Salida" className='container my-3' >
-        <Form.Control type='date' placeholder='Fecha de Salida' name='salida' {...register("salida",{
-            required:{value:true,message:"Ponga Fecha por favor"}
-        })}/>
-        <span className='text-danger' >{errors.salida&&errors.salida.message}</span> 
-      </FloatingLabel>
+     
 
       <FloatingLabel label="Numero de Personas" className='container my-3'>
-        <Form.Control type='Number' placeholder='Numero de Personas' name='personas' {...register("personas",{
-            required:{value:true,message:"Indique el numero de Personas"}
-        })}></Form.Control>
+      <Form.Select type='Number' className='select' aria-label="Default select example" aria-placeholder='Tipo de Habitacion' {...register("personas", { required: true,message:"Agregue el tipo de habitacion" })}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            
+          </Form.Select>
         <span className='text-danger' >{errors.personas&&errors.personas.message}</span> 
       </FloatingLabel>
       

@@ -6,7 +6,7 @@ import {Swiper, SwiperSlide } from 'swiper/react'
 import { useParams } from 'react-router-dom'
 import { hotel } from './js/datosservices'
 
-// import ReactLoading from 'react-loading';
+
 const Hotel = () => {
    const [data,setData]=useState([])
    

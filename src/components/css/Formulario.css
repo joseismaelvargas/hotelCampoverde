@@ -27,6 +27,20 @@
     width: 230px;
     margin: 25px 70px;
 }
+.textinfo{
+    height: 300px;
+}
+.auto-expand {
+    overflow: hidden;
+    resize: none;
+    min-height: 100px;
+    line-height: 1.5;
+  }
+  
+
+  .auto-expand:focus {
+    height: auto;
+  }
 @media(min-width:558px){
 
 .formulario{

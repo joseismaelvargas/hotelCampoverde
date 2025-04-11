@@ -84,7 +84,7 @@ console.log(logeadoUser)
             <div className='div-detalles'>
 
            <h3 className='tipo'>{habitacion.opciones}</h3>
-            <p className='mas-info'>Placard 6P 4C Nordico 176X47X180 Miel/Blanco Muebles Gacela</p>
+            <p className='mas-info'>{habitacion.carasteristicas}</p>
              <p className='descuento'><strong className='porcentaje'>%20</strong><del>${Descuento()}.00</del> </p>
            <p className='precio'> ${habitacion.precio}</p>
        <h5 className='medios'>Medios de pago</h5>

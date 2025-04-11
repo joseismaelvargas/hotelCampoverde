@@ -1,0 +1,27 @@
+/* .div-mireserva{
+   
+    width: 480px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+} */
+.no-reservas{
+    font-weight: bold;
+    text-align: center;
+    margin: 130px auto;
+    font-size: 23px;
+}
+.container-table{
+    /* margin: 100px; */
+}
+@media(min-width:758px){
+    .div-mireserva{
+        width: 100%;
+     height: 300px;
+        margin: 0px auto;
+        
+    }
+    .container-table{
+       height: 400px;
+    }
+}

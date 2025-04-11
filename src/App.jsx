@@ -37,7 +37,7 @@ function App() {
       <Route  path="/" element={<Index></Index>}></Route>
       <Route path="/admin/*" element={   <ProtegerRuta><Administrador></Administrador>  </ProtegerRuta>}></Route>
       <Route path="/createHabitaciones/*" element={<ProtegerRuta><CrearHabitacion></CrearHabitacion></ProtegerRuta> }></Route>
-      <Route path="/modificarreserva/:id/*" element={<ProtegerRuta><Modificar></Modificar></ProtegerRuta>}></Route>
+      <Route path="/modificarreserva/:id/*" element={<Modificar usuario={logeadoUser} logeado={logeado}></Modificar>}></Route>
      <Route path="/habitaciones" element={<Habitaciones logeadoUser={logeadoUser}></Habitaciones>}></Route>
       <Route path="/servicios" element={ <Servicios></Servicios>}></Route>
       <Route path='/verHabitacion/:id/*' element={<Verhabitacion logeadoUser={logeadoUser}></Verhabitacion>}></Route>
