@@ -55,7 +55,7 @@
     
 }
 .reservar{
-    /* border: solid rgb(92, 91, 91) 2px; */
+
     border-radius: 10px;
     font-weight: bold;
     color: white;
@@ -71,6 +71,7 @@
     .div-cuartos{
         width: 800px;
         margin: 10px auto;
+        height: 270px;
     }
     .img-cuartos{
         width: 300px;
@@ -81,5 +82,8 @@
         width: 1500px;
     margin: 20px 10px;
     /* border: solid rgb(24, 24, 23); */
+    }
+    .reservar{
+        width: 200px;
     }
 }

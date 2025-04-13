@@ -83,9 +83,9 @@ APiHAbitaciones()
          </div>
         
          <p className='suit-p'>{item.info}</p>
-         {
-         logeado.length>0?<Link  end to={`/verHabitacion/${item._id}`} className='reservar'>Ver habitacion</Link>:null
-         }
+
+<Link  end to={`/verHabitacion/${item._id}`} className='reservar'>Ver habitacion</Link>
+
          
       </div> 
        

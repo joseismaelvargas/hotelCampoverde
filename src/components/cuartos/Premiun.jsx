@@ -71,11 +71,10 @@ const Premiun = ({logeado}) => {
            <p>4 ventanas</p><p>2 camas</p>
          </div>
         
-         <p className='suit-p'>{item.info}</p>
-         {
-         logeado.length>0?<Link  end to={`/verHabitacion/${item._id}`} className='reservar'>Ver habitacion</Link>:<button className='reservar'   data-bs-toggle="modal" data-bs-target="#exampleModal"
-            aria-expanded="false" aria-haspopup="true">RESERVAR AHORA</button>
-         }
+         <p className='suit-p'>{item.carasteristicas}</p>
+         
+       <Link  end to={`/verHabitacion/${item._id}`} className='reservar'>Ver habitacion</Link>
+         
       </div> 
        
       </div>

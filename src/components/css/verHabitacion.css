@@ -117,13 +117,7 @@
   .descuento{
     margin: 20px;
   }
-  /* .mas-info{
-    font-size: 28px;
-    font-weight: 500;
-    color: var(--color-red-800);
-    margin: 10px;
-    width: 400px;
-  } */
+  
    .mas-info{
     font-size: 33px;
    }
@@ -158,7 +152,7 @@
   }
   
   .img-cuarto{
-    /* margin: 60px; */
+ 
     width: 600px;
     height: 350px;
   }

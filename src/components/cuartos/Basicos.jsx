@@ -75,10 +75,8 @@ const Basicos = ({logeado}) => {
          </div>
         
          <p className='suit-p'>{item.info}</p>
-         {
-         logeado.length>0?<Link  end to={`/verHabitacion/${item._id}`} className='reservar'>Ver habitacion</Link>:<button className='reservar'   data-bs-toggle="modal" data-bs-target="#exampleModal"
-            aria-expanded="false" aria-haspopup="true">RESERVAR AHORA</button>
-         }
+ 
+         <Link  end to={`/verHabitacion/${item._id}`} className='reservar'>Ver habitacion</Link>
          
       </div> 
        
