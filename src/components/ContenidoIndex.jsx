@@ -73,10 +73,12 @@ export const ContenidoIndex=()=>{
         </section>
         <section className="hotel ">
             <div className="section-hotel">
-               <h1>HOTEL</h1>  
+                <div className="dev-index">
+               <h1 className="title-index">HOTEL</h1>  
                <p className="sm:text-start sm:text-1x3 text-white sm:my-3 sm:mx-40 mx-auto my-3">
                Hotel Campos Verdes ubicado en uno de los barrios mas destacados de la ciudad de San Justo, su arquitectura minimalista y moderna, se emplaza sobre un ambiente natural y cálido, rodeado por la naturaleza y la tranquilidad.</p>
-               <Swiper modules={[Autoplay, Navigation,Pagination]}
+              </div> 
+              <Swiper modules={[Autoplay, Navigation,Pagination]}
               slidesPerView={1} 
               spaceBetween={0} 
             
@@ -87,7 +89,7 @@ export const ContenidoIndex=()=>{
             pagination={{
                 clickable: true,
               }}
-            loop={true} >
+            loop={true}  className="div-index">
                     <SwiperSlide>
                         <img src={img1} alt="hotel" className="img-index" /> 
                     </SwiperSlide>

@@ -13,7 +13,10 @@ export const ModalLogin=()=>{
 
 
 const Logear=async(data)=>{
-    const tipo=await logearUsuario(data)
+    const contraseña=data.contraseña
+    const correo=data.correo
+    
+    const tipo=await logearUsuario(contraseña,correo)
   console.log(tipo)
     if (tipo==="admin") {
       
@@ -34,7 +37,7 @@ const Logear=async(data)=>{
         text: "Bienvenido Usuario",
         icon: "success"
       });
-      Nav("/");
+      Nav("/habitaciones");
       location.reload()
     } else {
       Swal.fire({

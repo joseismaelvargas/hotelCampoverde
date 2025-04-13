@@ -56,15 +56,18 @@
 }
 .section-hotel{
     margin: 0px 30px;
+
+    width: 100%;
 }
 .section-hotel>h1{
-    font-size: 30px;
+    font-size: 50px;
+    text-align: center;
     font-weight: bold;
-    margin: 10px;
-    color: rgb(192, 99, 13);
+    
+    color: rgb(226, 129, 38);
 }
 .section-hotel>p{
-    font-size: 22px;
+    font-size: 18px;
     color: #fffdfd;
     margin: 10px;
     
@@ -72,17 +75,46 @@
 .img-index{
     border-radius: 10px;
     width: 100%;
+    margin: 0px auto;
     height: 350px;
+
+}
+.title-hotel{
+    color: rgb(221, 128, 41);
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+.parrafo-hotel{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    
 }
 .contactos{
-    margin: 30px auto;
+ 
     width: 360px;
+    margin: 10px 40px;
+   
     background-color: white;
     color: #666464;
     
 }
+
 .contactos>p{
     margin: 10px;
+}
+.divimghotel{
+    width: 380px;
+    margin: 0px auto;
+
+}
+.contactos-index{
+    margin: 0px auto;
+}
+.div-index{
+    width: 380px;
+    margin: 10px ;
 }
 .contactos-header{
     background-color: rgb(184, 117, 16);
@@ -92,9 +124,20 @@
     text-align: start;
 }
 @media(min-width:558px){
+    .title-hotel{
+        text-align: start;
+        margin: 30px;
+        font-size: 40px;
+    }
+    .divimghotel{
+        width: 700px;
+    }
+    .parrafo-hotel{
+        text-align: start;
+    }
     .section-hotel{
         margin: 0px  100px;
-     
+    
         width: 700px;
     }
     .hotel{
@@ -105,6 +148,8 @@
     .contactos{
         height: 350px;
         width: 300px;
+        margin: 0px 0px;
+       
     }
     .contactos>p{
         font-size: 15px;

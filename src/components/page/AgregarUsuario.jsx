@@ -25,8 +25,9 @@ agregarUser(user)
 const agregarUser= async (agregar)=>{
       try{
      const response=await addUser(agregar)
-     console.log(response)
+  
         if(response.status===201){
+        
              let actualizar =await response.json()
             Nav("/")
                if(actualizar){ 
@@ -37,8 +38,10 @@ const agregarUser= async (agregar)=>{
               showConfirmButton: false,
               timer: 500
             });
-                  
+                       sessionStorage.setItem("usuario", JSON.stringify(agregar.correo));
+                       location.reload()
                    }
+              
       }
      
       }catch{

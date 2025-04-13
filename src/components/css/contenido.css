@@ -169,7 +169,18 @@ li{
 .subtitle-habitaciones{
     text-align: center
 }
+.dev-index{
+    width: 380px;
+    margin: 0px 10px;
+ 
+}
+.title-index{
+    text-align: start;
+    color: rgb(221, 108, 32);
+    font-size: 24px;
+}
 @media(min-width:558px){
+  
     .div-habitaciones{
       margin: 0px 130px;
  

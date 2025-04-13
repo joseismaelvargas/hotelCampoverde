@@ -36,7 +36,7 @@ const Verreservas = () => {
 
      const response=await borrarReserva(id)
     buscarReserva()
-    location.reload()
+
  
   }catch{
     console.log("hubo un error en el sistema")

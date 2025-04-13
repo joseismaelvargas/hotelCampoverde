@@ -21,7 +21,7 @@ const Hotel = () => {
   Filtrar(num);
   },[num])
   const Filtrar = (id) => {
-      console.log(id)
+
     const filtrar = hotel.filter(item => item.id === id);
     if(filtrar.length>0){
       setData(filtrar) 
@@ -40,10 +40,13 @@ const Hotel = () => {
         data.map((item)=>
         <section className="hotel container" key={item.id}>
                 <div className="section-hotel">
-                   <h1>{item.title}</h1>  
-                   <p>
+                  <div>
+                     <h1 className='title-hotel'>{item.title}</h1>  
+                   <p className='parrafo-hotel'>
                   
                   {item.info}</p>
+                  </div>
+                  
                   <Swiper modules={[Autoplay, Navigation,Pagination]}
               slidesPerView={1} 
               spaceBetween={0} 
@@ -55,7 +58,7 @@ const Hotel = () => {
             pagination={{
                 clickable: true,
               }}
-            loop={true} >
+            loop={true} className='divimghotel' >
                     <SwiperSlide>
                         <img src={item.img1} alt="hotel" className="img-index" /> 
                     </SwiperSlide>

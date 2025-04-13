@@ -20,7 +20,7 @@ const [load,setload]=useState(null)
   const APiHAbitaciones=async()=>{
     try{
        const response=await fetch(URL_habitaciones+"/crear")
-       console.log(response)
+
        if(response.status===200){
         const data=await response.json()
         const filter=data.filter((item)=>item.opciones==="Suite Junior")
@@ -57,7 +57,7 @@ APiHAbitaciones()
               spaceBetween={0} 
             
             autoplay={{
-                delay:5000
+                delay:3000
             }}
         
             pagination={{
@@ -79,7 +79,7 @@ APiHAbitaciones()
       <div className='info'>
          <h3 className='suit-title'>{item.opciones}</h3>
          <div className='info-habitacion'>
-           <p>4 ventanas</p><p>2 camas</p>
+           <p>1tv</p><p>2 camas</p>
          </div>
         
          <p className='suit-p'>{item.info}</p>

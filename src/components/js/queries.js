@@ -68,26 +68,22 @@ export const editaUsuario=async(usuario,id)=>{
 }
 
  
- export const logearUsuario =async (data) => {
+ export const logearUsuario =async (contraseñas,correo) => {
    try{
    const response=await fetch(URL_Usuario+"/verusuarios")
-    console.log(response)
+
    if(response.ok){
      let datausuarios =await response.json()
-         
-     const usuario=datausuarios.find((item)=>item.correo===data.correo)
- 
-
-  
-       
-       if (
-       data.correo.toLowerCase() === usuariosAdmin.correo.toLowerCase()
+      
+     const usuario=datausuarios.find((item)=>item.correo===correo)
+  if (
+      correo.toLowerCase() === usuariosAdmin.correo.toLowerCase()
       ) {
        sessionStorage.setItem("administrado", JSON.stringify(usuariosAdmin.correo));
        return "admin";
   } else if (
        
-      data.correo === usuario.correo
+      correo === usuario.correo&&contraseñas===usuario.contraseña
      ) {
        sessionStorage.setItem("usuario", JSON.stringify(user.correo));
      return "usuario";

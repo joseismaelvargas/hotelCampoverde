@@ -4,7 +4,7 @@ import "./cuartos.css"
 import { Autoplay,Pagination,Navigation} from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-const Premiun = ({logeado}) => {
+const Premiun = () => {
   const [premiun,setPremiun]=useState([]);
   const [load,setload]=useState(null)
     const APiHAbitaciones=async()=>{
@@ -47,7 +47,7 @@ const Premiun = ({logeado}) => {
               spaceBetween={0} 
             
             autoplay={{
-                delay:5000
+                delay:3000
             }}
         
             pagination={{
@@ -68,10 +68,10 @@ const Premiun = ({logeado}) => {
       <div className='info'>
          <h3 className='suit-title'>{item.opciones}</h3>
          <div className='info-habitacion'>
-           <p>4 ventanas</p><p>2 camas</p>
+           <p>servicio al cuarto</p><p>2 camas</p>
          </div>
         
-         <p className='suit-p'>{item.carasteristicas}</p>
+         <p className='suit-p'>{item.info}</p>
          
        <Link  end to={`/verHabitacion/${item._id}`} className='reservar'>Ver habitacion</Link>
          

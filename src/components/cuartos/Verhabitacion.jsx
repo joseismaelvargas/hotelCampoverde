@@ -11,7 +11,7 @@ const Verhabitacion = ({logeadoUser}) => {
   const [habitacion,setHabitacion]=useState(null)
   
 const {id}=useParams()
-console.log(logeadoUser)
+
  const ApiHabitacion=async(id)=>{
   try{
      let response=await fetch( URL_habitaciones+"/crear")
@@ -100,7 +100,7 @@ console.log(logeadoUser)
                       
                        
                       </div>
-                      {logeadoUser.length>0?<Link className='buttonreservar'end to={`/reservar/${id}`} >Reservar ahora</Link>
+                      {logeadoUser.length>0?<Link className='buttonreservar ' end to={`/reservar/${id}`} >Reservar ahora</Link>
               :<button className='buttonreservar' data-bs-toggle="modal" data-bs-target="#exampleModal"
             aria-expanded="false" aria-haspopup="true" >Reservar ahora</button>
   }

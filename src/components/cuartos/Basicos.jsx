@@ -50,7 +50,7 @@ const Basicos = ({logeado}) => {
               spaceBetween={0} 
             
             autoplay={{
-                delay:5000
+                delay:3000
             }}
         
             pagination={{
@@ -71,7 +71,7 @@ const Basicos = ({logeado}) => {
       <div className='info'>
          <h3 className='suit-title'>{item.opciones}</h3>
          <div className='info-habitacion'>
-           <p>4 ventanas</p><p>2 camas</p>
+           <p>2 ventanas</p><p>1camas</p>
          </div>
         
          <p className='suit-p'>{item.info}</p>
