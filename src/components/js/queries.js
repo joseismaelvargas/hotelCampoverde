@@ -3,16 +3,6 @@ export const URL_Usuario=import.meta.env.VITE_API_HABITACIONES
 
 
 
-const usuariosAdmin = {
-   contraseña: "0340",
-   correo: "isma@gmail.com"
- };
- 
- const user={
-   contraseña: "03401122",
-   correo: "isma@gmail.com"
- }
-
  export const usuarioDelete=async(id)=>{
     try{
            const response=await fetch(URL_Usuario+"/eliminarUsuario"+"/"+id,{
@@ -68,37 +58,36 @@ export const editaUsuario=async(usuario,id)=>{
 }
 
  
- export const logearUsuario =async (contraseñas,correo) => {
-   try{
-   const response=await fetch(URL_Usuario+"/verusuarios")
+export const logearUsuario = async (correo, contraseña) => {
+  try {
+    console.log(correo,contraseña)
+    const response = await fetch(URL_Usuario + "/logear", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        correo,
+        contraseña
+      }),
+    });
 
-   if(response.ok){
-     let datausuarios =await response.json()
-      
-     const usuario=datausuarios.find((item)=>item.correo===correo)
-  if (
-      correo.toLowerCase() === usuariosAdmin.correo.toLowerCase()
-      ) {
-       sessionStorage.setItem("administrado", JSON.stringify(usuariosAdmin.correo));
-       return "admin";
-  } else if (
-       
-      correo === usuario.correo&&contraseñas===usuario.contraseña
-     ) {
-       sessionStorage.setItem("usuario", JSON.stringify(user.correo));
-     return "usuario";
-     } else {
-     console.log("Credenciales incorrectas");
+    const data = await response.json();
+      console.log(data)
+    if (response.ok) {
+      if (data.rol === "admin") {
+        sessionStorage.setItem("administrado", JSON.stringify(correo));
+        return "admin";
+      } else {
+        sessionStorage.setItem("usuario", JSON.stringify(correo));
+        return "usuario";
+      }
+    } else {
+      console.log(data.mensaje || "Credenciales incorrectas");
       return false;
     }
-   }
+  } catch (error) {
+    console.error("Error al logear:", error);
+    return false;
   }
-  catch(error){
-   console.error(error)
-  }
- 
-  
-    
-  
- };
- 
+};

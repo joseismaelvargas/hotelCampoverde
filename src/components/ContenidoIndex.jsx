@@ -89,7 +89,7 @@ export const ContenidoIndex=()=>{
             pagination={{
                 clickable: true,
               }}
-            loop={true}  className="div-index">
+            loop={true}  className="div-index-img">
                     <SwiperSlide>
                         <img src={img1} alt="hotel" className="img-index" /> 
                     </SwiperSlide>

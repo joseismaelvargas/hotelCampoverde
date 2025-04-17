@@ -265,8 +265,8 @@ const eliminarusuario =(id)=>{
           <td>{item.Dni}</td>
           <td>{item.nombre}</td>
           <td>{item.tipo}</td>
-          <td>{item.corre}</td>
-          <td> {item.entrada} <strong>a</strong> {item.salida}</td>
+          <td>${item.pago}</td>
+          <td> {item.entrada} </td>
          
         
           <td>

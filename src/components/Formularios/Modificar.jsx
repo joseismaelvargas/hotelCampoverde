@@ -70,7 +70,7 @@ const modificaradmin=async(reservaModificada,id)=>{
           setValue('dni',reservaencontrada.Dni)
           setValue('corre',reservaencontrada.corre)
           setValue('entrada',reservaencontrada.entrada)
-          setValue('salida',reservaencontrada.salida)
+             
           setValue('personas',reservaencontrada.personas)
           setValue('opciones',reservaencontrada.tipo)
           
@@ -128,21 +128,17 @@ const modificaradmin=async(reservaModificada,id)=>{
       </FloatingLabel>
       
      
-      <FloatingLabel label="Fecha Salida" className='container my-3' >
-        <Form.Control type='date' placeholder='Fecha de Salida' name='salida' {...register("salida",{
-            required:{value:true,message:"Ponga Fecha por favor"}
-        })}/>
-        <span className='text-danger' >{errors.salida&&errors.salida.message}</span> 
-      </FloatingLabel>
-
+    
       <FloatingLabel label="Numero de Personas" className='container my-3'>
-        <Form.Control type='Number' placeholder='Numero de Personas' name='personas' {...register("personas",{
-            required:{value:true,message:"Indique el numero de Personas"}
-        })}></Form.Control>
+      <Form.Select type='Number' className='select' aria-label="Default select example" aria-placeholder='Tipo de Habitacion' {...register("personas", { required: true,message:"Agregue el tipo de habitacion" })}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            
+          </Form.Select>
         <span className='text-danger' >{errors.personas&&errors.personas.message}</span> 
       </FloatingLabel>
-      
-      <Form.Select className='select' aria-label="Default select example" aria-placeholder='Tipo de Habitacion' {...register("tipo", { required: true,message:"Agregue el tipo de habitacion" })}>
+      <Form.Select className='select' aria-label="Default select example" aria-placeholder='Tipo de Habitacion' {...register("opciones", { required: true,message:"Agregue el tipo de habitacion" })}>
             <option value="Premiun">Suite Premiun</option>
             <option value="Junior">Suite Junior</option>
             <option value="Estandar">Suite Estandar</option>

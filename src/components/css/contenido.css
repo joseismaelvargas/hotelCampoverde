@@ -28,13 +28,13 @@
     font-size: 30px;
 }
 .section-hotel>h1{
-    font-size: 34px;
+    font-size: 3px;
 }
 .div-content>p{
     text-align: center;
     font-weight: 500;
     font-size: 20px;
-    color: rgb(90, 88, 88);  
+    color: rgb(150, 12, 12);  
 }
 
 .icon{
@@ -113,12 +113,7 @@ li{
     margin: 20px;
    background-color: rgb(255, 180, 41);}
 
-.section-hotel>p{
-    font-size: 2px;
-    color: #3b3939;
-  
-    
-}
+
 .img-index{
     border-radius: 10px;
     width: 100%;
@@ -128,6 +123,14 @@ li{
 .contactos{
    
     margin: 30px 50px;
+    width: 360px;
+    background-color: white;
+    color: #666464;
+    
+}
+.contactos-habitaciones{
+   
+    margin: 30px auto;
     width: 360px;
     background-color: white;
     color: #666464;
@@ -179,8 +182,27 @@ li{
     color: rgb(221, 108, 32);
     font-size: 24px;
 }
+.subtitle-habitaciones{
+    color: rgb(240, 132, 37);
+}
+.text-habitaciones{
+    margin: 0px 50px;
+    font-size: 19px;
+    color: rgb(255, 255, 255);
+}
 @media(min-width:558px){
-  
+    .div-habitaciones-text{
+        width: 500px;
+        border: solid orange;
+    }
+    .subtitle-habitaciones{
+        text-align: start;
+        color: rgb(240, 132, 37);
+    }
+   .text-habitaciones{
+    color: rgb(255, 255, 255);text-align: start;
+    font-size: 20px;
+   }
     .div-habitaciones{
       margin: 0px 130px;
  
@@ -196,8 +218,13 @@ li{
         width: 470px;
     }
     .section-hotel{
-        margin: 0px  0px;
+        margin: 0px  auto;
+
         width: 800px;
+    }
+    .dev-index{
+      
+        width: 100%;
     }
     .dondeestamos{
         
@@ -215,10 +242,7 @@ li{
         display: flex;
         justify-content: center;
     }
-    .contactos{
-        height: 350px;
-        width: 300px;
-    }
+
     .contactos>p{
         font-size: 15px;
     }
@@ -228,9 +252,14 @@ li{
         text-align: start;
         margin: 20px;
     }
+    .div-index-img{
+        width: 100%;
+   
+    }
     .img-index{
+  
         border-radius: 0px;
-        height: 400px;
+        
     }
     .div-padre{
         display: flex;

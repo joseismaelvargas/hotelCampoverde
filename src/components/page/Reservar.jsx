@@ -15,7 +15,7 @@ const Reservar = ({logeado,logeadoUser}) => {
     const [habitacion,setFechaReservada]=useState({})
     const Nav=useNavigate()
     const {id}=useParams()
-  
+  console.log(habitacion.precio)
 
 const APiHAbitaciones=async(id)=>{
     try{
@@ -55,7 +55,9 @@ APiHAbitaciones(id)
           entrada:data.entrada,
           salida:data.salida,
           personas:Number(data.personas),
-          tipo:data.opciones
+          tipo:data.opciones,
+          pago:habitacion.precio
+          
 
       }
       const disponibilidad = habitacion.fechasReservadas.find((reserva) => {
@@ -189,9 +191,7 @@ const petticionagreagar=async(id,reserva,data)=>{
             
           </Form.Select>
       <span className='text-danger' >{errors.opciones&&errors.opciones.message}</span> 
-      {/* <div className='d-flex justify-content-start '>
-        
-      </div> */}
+   
      <button className='buttonenviar  my-3' type='Submit'>Reservar Ahora</button>
       </Form>
   </main>

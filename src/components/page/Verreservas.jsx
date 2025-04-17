@@ -7,14 +7,16 @@ import Swal from 'sweetalert2';
 import {  URL_reservas } from '../js/reservas';
 import { Link } from 'react-router-dom';
 import { borrarReserva } from '../js/reservas';
+
 const Verreservas = () => {
   const miReservas=JSON.parse(localStorage.getItem("correo"))||null
+  
   const [correo,setCorreo]=useState(miReservas)
   const [reserva,setreserva]=useState([])
 
   const borrarmiReserva=(id)=>{
    Swal.fire({
-     title: "Eliminar",
+     title: "Cancelar",
      text: "Esta seguro de Cancelar su Reserva",
      icon: "warning",
      showCancelButton: true,
@@ -24,7 +26,7 @@ const Verreservas = () => {
    }).then((result) => {
      if (result.isConfirmed) {
        eliminarmiReserva(id)
-      
+   
  
      }
    });
@@ -35,7 +37,9 @@ const Verreservas = () => {
   try{
 
      const response=await borrarReserva(id)
+  
     buscarReserva()
+     location.reload()
 
  
   }catch{
@@ -61,12 +65,11 @@ const Verreservas = () => {
    buscarReserva(correo)
   },[correo])
 
- console.log(reserva)
   return (
     <main>
 
    
-    {correo===null ?
+    {reserva.length===0 ?
     <div className='div-mireserva'>
     <p className='no-reservas'>No tiene ninguna Reserva</p>
       </div>
@@ -83,7 +86,7 @@ const Verreservas = () => {
           <tr>
             <th>nombre</th>
             <th>Habitacion</th>
-         
+           <th>precio</th>
             <th>personas</th>
             <th>Entrada</th>
             <th>opciones</th>
@@ -95,7 +98,7 @@ const Verreservas = () => {
         <td>{miReserva.nombre}</td>
         <td>{miReserva.tipo}</td>
       
-     
+        <td>${miReserva.pago}</td>
         <td>{miReserva.personas}</td>
         <td>{miReserva.entrada}</td>
         
@@ -103,7 +106,7 @@ const Verreservas = () => {
         <td>
          <button className='btn btn-danger mx-2' onClick={()=>borrarmiReserva(miReserva._id)}>Cancelar reserva</button>
          <Link end to={"/modificarreserva/"+miReserva._id} className='btn btn-success'>Modificar</Link>
-      
+        
           </td>
         </tr> 
    

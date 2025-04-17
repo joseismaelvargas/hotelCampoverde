@@ -1,5 +1,5 @@
 
-import { useState,useEffect} from "react"
+import { useState} from "react"
 import "../css/contenido.css"
 import Basicos from "../cuartos/Basicos"
 import Premiun from "../cuartos/Premiun"
@@ -17,9 +17,9 @@ export const Habitaciones = ({logeadoUser}) => {
   return (
    <main className="main">
    <section className="hotel ">
-                <div className="section-hotel">
+                <div className="div-img" >
                    <h1 className='subtitle-habitaciones'>HABITACIONES</h1> 
-                   <p  className="text-habitacion">Tenemos las mejores habitaciones para que disfrutes de una estancia cómoda y placentera, rodeado de naturaleza y tranquilidad.
+                   <p  className="text-habitaciones">Tenemos las mejores habitaciones para que disfrutes de una estancia cómoda y placentera, rodeado de naturaleza y tranquilidad.
                     Ya sea que busques una escapada romántica, un viaje familiar o un retiro en la naturaleza, en Hotel Campo Verde encontrarás el espacio ideal para relajarte y desconectar. <strong>¡Reserva ahora y vive una experiencia inolvidable!</strong></p>
               
                
@@ -45,7 +45,7 @@ export const Habitaciones = ({logeadoUser}) => {
                   Suites
                }
                  </section>
-            <div className="contactos">
+            <div className="contactos-habitaciones">
                  
                
                 <div className="contactos-header">

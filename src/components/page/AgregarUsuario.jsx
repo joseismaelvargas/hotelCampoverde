@@ -16,6 +16,7 @@ const agregar=(data)=>{
       nombre:data.nombre,
       contraseña:Number(data.contraseña),
       correo:data.correo,
+      rol:"usuario"
       
 
   }

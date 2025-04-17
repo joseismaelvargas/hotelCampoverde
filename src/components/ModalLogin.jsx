@@ -6,7 +6,7 @@ import {  useNavigate } from "react-router-dom"
 import { logearUsuario } from "./js/queries"
 import { Link } from "react-router-dom"
 import Swal from 'sweetalert2'
-import React,{useState} from "react"
+import React from "react"
 export const ModalLogin=()=>{
     const { register, handleSubmit ,formState:{errors}} = useForm();
      const Nav=useNavigate()
@@ -16,7 +16,7 @@ const Logear=async(data)=>{
     const contraseña=data.contraseña
     const correo=data.correo
     
-    const tipo=await logearUsuario(contraseña,correo)
+    const tipo=await logearUsuario(correo,contraseña)
   console.log(tipo)
     if (tipo==="admin") {
       
