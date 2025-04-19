@@ -1,10 +1,10 @@
 .div-cuartos{
     display: flex;
     width: auto;
-    height: 230px;
-    margin: 10px auto;
+    height: 280px;
+    margin: 17px auto;
       border-radius: 10px;
-    border: solid rgb(0, 0, 0) 2px;
+    border: solid rgb(233, 133, 39) 3px;
     background-color: rgba(255, 249, 244, 0.89);
  
 }
@@ -15,17 +15,17 @@
 }
 .devload{
     height: 140px;
-  
+     
     display: flex;
     justify-content: center;
 }
 .info-habitacion{
     color: rgb(64, 148, 204);
     display: flex;
-    font-size: 14px;
+    font-size: 13px;
 }
 .info-habitacion>p{
-    margin: 0px 10px;
+    margin: 10px 10px;
 }
 .imgdev{
     width: 600px;
@@ -42,18 +42,20 @@
      max-width: 800px;
 
     margin: 10px 0px;
+
     font-weight: 500;
     text-align: start;
  
 }
 .suit-title{
-    font-size: 25PX;
+    font-size: 26PX;
+    margin: 8px;
     color: rgb(233, 142, 23);
     font-weight: bold;
 }
 .suit-p{
     color: rgb(75, 74, 73);
-    font-size: 12px;
+    font-size: 14px;
     
 }
 .reservar{
