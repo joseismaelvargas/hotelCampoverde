@@ -1,7 +1,8 @@
 .div-cuartos{
     display: flex;
     width: auto;
-    height: 280px;
+    max-height: auto;
+
     margin: 17px auto;
       border-radius: 10px;
     border: solid rgb(233, 133, 39) 3px;
@@ -22,7 +23,7 @@
 .info-habitacion{
     color: rgb(64, 148, 204);
     display: flex;
-    font-size: 13px;
+    font-size: 11px;
 }
 .info-habitacion>p{
     margin: 10px 10px;
@@ -42,20 +43,21 @@
      max-width: 800px;
 
     margin: 10px 0px;
-
+      height: auto;
+      padding: 10px;
     font-weight: 500;
     text-align: start;
  
 }
 .suit-title{
-    font-size: 26PX;
-    margin: 8px;
+    font-size: 19PX;
+    margin: 4px;
     color: rgb(233, 142, 23);
     font-weight: bold;
 }
 .suit-p{
     color: rgb(75, 74, 73);
-    font-size: 14px;
+    font-size: 11px;
     
 }
 .reservar{
@@ -65,7 +67,7 @@
     color: white;
     padding: 10px;
     text-decoration: none;
-    width: 100px;
+    width: 80px;
     
 
     background-color: rgb(218, 133, 23);
@@ -81,7 +83,7 @@
     .div-cuartos{
         width: 800px;
         margin: 30px auto;
-        height: 270px;
+        height:auto;
     }
     .imgdev{
         max-width:  1000px;
@@ -95,10 +97,14 @@
      
         /* border: solid red 3px; */
     }
+    .suit-title{
+        margin: 0px;
+    }
     .info{
         width: 1500px;
-    margin: 20px 10px;
-    /* border: solid rgb(24, 24, 23); */
+   padding: 3px;
+
+    height: auto;
     }
     .suit-p{
         font-size: 16px;
