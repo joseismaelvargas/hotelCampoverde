@@ -19,6 +19,6 @@ Proyecto web moderno para la página del Hotel Campo Verde, desarrollado con Rea
 ---
 #### Vea el sitio web aqui 
 https://campoverdecom.netlify.app/
-#### para Logearse como administrador introdusca esta cuenta 
-Correo:administradorpage@gmail.com
-Contraseña:116677
+#### para Logearse como administrador introdusca 
+correo:adminstrador01page@gmail.com
+Contraseña:556677
