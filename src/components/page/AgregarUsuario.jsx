@@ -7,8 +7,16 @@ import imglogo from "/img/logo.png"
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import addUser from '../js/queries';
+
 const AgregarUsuario = () => {
   const { register, handleSubmit ,formState:{errors}} = useForm();
+const modalElement = document.getElementById("exampleModal");
+if (modalElement) {
+  const modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (modalInstance) {
+    modalInstance.hide();
+  }
+}
 const Nav=useNavigate()
 const agregar=(data)=>{
   let user={

@@ -155,6 +155,7 @@ const eliminarusuario =(id)=>{
   }
  }
 
+ console.log(habitaciones)
  return (
    <main>
    
@@ -173,7 +174,7 @@ const eliminarusuario =(id)=>{
       <Table striped responsive bordered className="container">
         <thead className="bg-primary">
           <tr>
-            <th>Numero de Habitacion</th>
+            <th>Id de Habitacion</th>
             <th>Tipo de Habitacion</th>
             <th>Precio</th>
             <th>imagenes de habitacion</th>
@@ -186,7 +187,7 @@ const eliminarusuario =(id)=>{
         <td>{item._id}</td>
         <td>{item.opciones}</td>
         <td>${item.precio}</td>
-        <td><img src={item.img1} alt="img" className='w-[100px]' /></td>
+        <td><img src={item.imagen1} alt="img" className='w-[100px]' /></td>
         <td>
             <button class="btn btn-outline-danger mb-2 mb-md-0" onClick={()=>borrarlasHabitaciones(item._id)}>Eliminar</button>
             <Link  end to={`/modificarhabitaciones/${item._id}`} ><button class="btn btn-outline-success mx-4">Modificar</button></Link>

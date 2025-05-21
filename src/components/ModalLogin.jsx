@@ -106,7 +106,7 @@ const Logear=async(data)=>{
                   Iniciar con Google
                 </button>
                 <Link end to={"/createuser"} className="link-login" >¿Aún no estás registrado?  Crea tu cuenta gratuita aquí.</Link>
-                
+                  
                 
                <button  className="btn btn-success" type="submit">Iniciar</button>
                 </form>
