@@ -74,7 +74,7 @@ const Logear=async(data)=>{
             { errors.correo &&<p className="errors">{errors.correo.message}</p>}
             <label htmlFor="" >Contraseña</label>
             <br />
-            <input type="text" {...register("contraseña",{
+            <input type="password" {...register("contraseña",{
               required:"Agregue Contraseña",
               minLength:{value:2,message:"Agregue una Contraseña valida"}
             })}/>

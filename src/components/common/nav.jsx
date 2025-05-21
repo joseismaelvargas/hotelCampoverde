@@ -3,9 +3,32 @@ import { useState } from "react"
 import React from 'react'
 import { Link } from "react-router-dom"
 import {hotel}from"../js/datosservices"
-
+import { RiLogoutBoxFill } from "react-icons/ri";
+import Swal from "sweetalert2"
+import { useNavigate } from "react-router-dom"
 const Nav = ({logeado,logeadoUser}) => {
     const [menu,setMenu]=useState(false)
+    const nav=useNavigate()
+
+    const loGout=()=>{
+     Swal.fire({
+  title: "Esta seguro de cerrar sesion",
+
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "si"
+}).then((result) => {
+  if (result.isConfirmed) {
+
+  
+    sessionStorage.clear();
+     nav("/")
+     location.reload()
+  }
+});
+    }
   return (
     <nav className="navegador bg-gray-800">
   <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -64,22 +87,38 @@ const Nav = ({logeado,logeadoUser}) => {
         <div className="relative ml-3">
        
 
-          <div>
+         {logeadoUser.length||logeado.length>0?  <div>
+            <button type="button" className="button-login" id="user-menu-button"
+         
+            aria-expanded="false" aria-haspopup="true">
+              <span className="absolute -inset-1.5"></span>
+              <span className="sr-only">Open user menu</span>
+            
+             <img className="img-login " src="https://previews.123rf.com/images/yupiramos/yupiramos1610/yupiramos161007352/64369849-joven-hombre-aislado-avatar-icono-de-ilustraci%C3%B3n-vectorial-de-dise%C3%B1o.jpg" alt="logeado"></img>
+            </button>
+          </div>
+          
+
+  :
+      <div>
             <button type="button" className="button-login" id="user-menu-button"
              data-bs-toggle="modal" data-bs-target="#exampleModal"
             aria-expanded="false" aria-haspopup="true">
               <span className="absolute -inset-1.5"></span>
               <span className="sr-only">Open user menu</span>
-              {logeadoUser.length>0? <img className="img-login " src="https://previews.123rf.com/images/yupiramos/yupiramos1610/yupiramos161007352/64369849-joven-hombre-aislado-avatar-icono-de-ilustraci%C3%B3n-vectorial-de-dise%C3%B1o.jpg" alt="logeado"></img>:
-         <img className="img-login " src="https://tse2.mm.bing.net/th?id=OIP.OWHqt6GY5jrr7ETvJr8ZXwHaHa&pid=Api&P=0&h=180" alt="logeado"></img>
-              }
-             
+            
+             <img className="img-login "src="https://tse2.mm.bing.net/th?id=OIP.OWHqt6GY5jrr7ETvJr8ZXwHaHa&pid=Api&P=0&h=180" alt="logeado"></img>
             </button>
-          </div>
-
+          </div>    
+              }
     
         
         </div>
+        {
+          logeadoUser.length||logeado.length>0?     <RiLogoutBoxFill className="logout" onClick={loGout} />:null
+        }
+   
+
       </div>
     </div>
   </div>

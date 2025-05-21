@@ -2,6 +2,15 @@
     background-image: url("/img/footer.jpg");
     background-color: rgba(49, 22, 9, 0.815);
 }
+.logout{
+    color: rgb(138, 83, 11);
+     
+    font-size: 40px;
+    cursor: pointer;
+}
+.logout:hover{
+    color: rgb(204, 162, 24);
+}
 .link{
     font-weight: 400;
     font-size: 14px;
