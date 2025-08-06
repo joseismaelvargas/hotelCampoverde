@@ -30,13 +30,13 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <Nav logeado={logeado} setlogeado={setlogeado} logeadoUser={logeadoUser}></Nav>
+    <Nav logeado={logeado} setlogeado={setlogeado}  logeadoUser={logeadoUser}></Nav>
  <ModalLogin logeado={logeado } setlogeado={setlogeado}></ModalLogin>
     <Routes>
    
       <Route  path="/" element={<Index></Index>}></Route>
-      <Route path="/admin/*" element={   <ProtegerRuta><Administrador></Administrador>  </ProtegerRuta>}></Route>
-      <Route path="/createHabitaciones/*" element={<ProtegerRuta><CrearHabitacion></CrearHabitacion></ProtegerRuta> }></Route>
+      <Route path="/admin/*" element={  <ProtegerRuta><Administrador></Administrador> </ProtegerRuta> }></Route>
+      <Route path="/createHabitaciones/*" element={<CrearHabitacion></CrearHabitacion> }></Route>
       <Route path="/modificarreserva/:id/*" element={<Modificar usuario={logeadoUser} logeado={logeado}></Modificar>}></Route>
      <Route path="/habitaciones" element={<Habitaciones logeadoUser={logeadoUser}></Habitaciones>}></Route>
       <Route path="/servicios" element={ <Servicios></Servicios>}></Route>
@@ -44,7 +44,7 @@ function App() {
       <Route path="/hotel/:id" element={<Hotel></Hotel>}></Route>
       <Route path="/reservar/:id/*" element={<Protegerusuario><Reservar></Reservar></Protegerusuario>}></Route>
       <Route path="/createuser" element ={<AgregarUsuario></AgregarUsuario>}></Route>
-      <Route path="/modificarhabitaciones/:id/*" element={<ProtegerRuta><ModificarHabitacion></ModificarHabitacion></ProtegerRuta>}></Route>
+      <Route path="/modificarhabitaciones/:id/*" element={<ModificarHabitacion></ModificarHabitacion>}></Route>
        <Route path="/modificarUsuario/:id/*" element={<ProtegerRuta> <ModificarUsuario></ModificarUsuario></ProtegerRuta>}></Route>
      <Route path="/verReserva/*" element={<Protegerusuario> <Verreservas></Verreservas></Protegerusuario>}></Route>
     </Routes>

@@ -59,16 +59,14 @@ const {id}=useParams()
                 clickable: true,
               }}
             loop={true} >
-                    <SwiperSlide>
-                        <img src={habitacion.imagen1}alt="hotel" className="img-cuarto" /> 
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={habitacion.imagen2}alt="hotel" className="img-cuarto" /> 
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={habitacion.imagen3} alt="hotel" className="img-cuarto" /> 
-                    </SwiperSlide>
-                   
+              {
+                habitacion.ImagenesHabitacion?.map((img,i)=>(
+                  <SwiperSlide key={i}>
+                    <img src={img} alt='hotel' className='img-cuarto'/>
+                  </SwiperSlide>
+                ))
+              }
+        
                   </Swiper>
                   <div>
                     

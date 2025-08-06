@@ -57,5 +57,14 @@
     font-weight: bold;
     background-color: rgb(221, 134, 21);
 }
+.preview-container{
+    background-color: white;
+    border-radius:10px ;
+    padding: 3px ;
+    display: flex;
+    width: auto;
+    gap: 10px;
+    margin:5px 80px;
+}
 
 }

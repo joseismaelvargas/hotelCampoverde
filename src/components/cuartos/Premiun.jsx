@@ -54,16 +54,11 @@ const Premiun = () => {
                 clickable: true,
               }}
             loop={true} >
-                    <SwiperSlide>
-                        <img src={item.imagen1} alt="hotel" className="img-cuartos" /> 
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={item.imagen2}alt="hotel" className="img-cuartos" /> 
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={item.imagen3} alt="hotel" className="img-cuartos" /> 
-                    </SwiperSlide>
-                   
+                   {item.ImagenesHabitacion?.map((imgurl,i)=>(
+                                  <SwiperSlide key={i}>
+                                          <img src={imgurl} alt={`img-${i}`} className="img-cuartos" /> 
+                                      </SwiperSlide>
+                                ))}
                   </Swiper>
       <div className='info'>
          <h3 className='suit-title'>{item.opciones}</h3>

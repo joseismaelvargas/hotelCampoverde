@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import "../css/Formulario.css"
 import { useForm } from 'react-hook-form';
@@ -10,41 +10,47 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
 const CrearHabitacion = () => {
-  
+      const [previews,setPreviews]=useState([])
      const { register, handleSubmit ,formState:{errors}} = useForm();
-
+     const [archivos,setarchivos]=useState([])
      const Nav=useNavigate()
 
-     const agregarHabitacion=(data,e)=>{
-      e.preventDefault()
+ const handleFileChange = (e) => {
+    const files = Array.from(e.target.files);
+    setarchivos(files)
+    const urls = files.map(file => URL.createObjectURL(file));
+    setPreviews(urls);
+  };
+     
+  
+  
+  
+  const agregarHabitacion=(data)=>{
 
-     const habitacionCreada={
-        opciones:data.opciones,
-        info:data.info,
-        precio:Number(data.precio),
-        carasteristicas:data.carasteristicas,
-        imagen1:data.img1,
-        imagen2:data.img2,
-        imagen3:data.img3
-      }
+
+   
+      const formData = new FormData();
+
+    formData.append("opciones", data.opciones);
+    formData.append("info", data.info);
+    formData.append("carasteristicas", data.carasteristicas);
+ 
+    formData.append("precio", Number(data.precio));
+   
+     for(let i=0;i<archivos.length;i++){
+     formData.append("ImagenesHabitacion",archivos[i])
+    }
  
 
-      agregar(habitacionCreada)
-         Swal.fire({
-                          position: "top-center",
-                          icon: "success",
-                          title: "La habitacion fue creada con exito",
-                          showConfirmButton: false,
-                          timer: 500
-                        });
-     }
-
+      agregar(formData)
+       
+    }
 
      
      const agregar=async(habitacion)=>{
       try{
          const response=await petticionAgregar(habitacion)
-        console.log(response)
+        
        if(response.status===201){
            Nav("/admin")
        }else{
@@ -89,27 +95,28 @@ const CrearHabitacion = () => {
         <span className='text-danger' >{errors.carasteristicas&&errors.carasteristicas.message}</span> 
       </FloatingLabel>
  
-      <FloatingLabel label="ingrese la primera imagen de la habitacion" className='container my-2'>
-        <Form.Control type="text" placeholder="Info de Habitacion"  name='info' {...register("img1",{
-            required:{value:true,message:"Este campo debe estar lleno"},
-            minLength:{value:3,message:"Ponga una img valida"}
-        })}/>
-        <span className='text-danger' >{errors.img1&&errors.img1.message}</span> 
-      </FloatingLabel>
-
-      <FloatingLabel label="ingrese la segunda imagen de la habitacion" className='container my-2'>
-        <Form.Control type="text" placeholder="Info de Habitacion"  name='info' {...register("img2",{
-            required:{value:true,message:"Este campo debe estar lleno"},
-            minLength:{value:3,message:"Ponga una img valida"}
-        })}/>
-        <span className='text-danger' >{errors.img2&&errors.img2.message}</span> 
-      </FloatingLabel>
-      <FloatingLabel label="ingrese la tercera imagen de la habitacion" className='container my-2'>
-        <Form.Control type="text" placeholder="Info de Habitacion"  name='info' {...register("img3",{
-            required:{value:true,message:"Este campo debe estar lleno"},
-            minLength:{value:3,message:"Ponga una img valida"}
-        })}/>
-        <span className='text-danger' >{errors.img3&&errors.img3.message}</span> 
+    
+ 
+      <FloatingLabel className='container my-2'>
+          <Form.Group controlId="formFile" className="mb-3">
+     <Form.Control
+  type="file"
+  name='ImagenesHabitacion'
+  id='ImagenesHabitacion'
+  multiple
+  onChange={handleFileChange}
+/>
+     
+  {previews.length>0? <div className="preview-container" style={{ margin:'5px', display: 'flex', gap: '10px' }}>{previews.map((url, i) => (
+    <img
+      key={i}
+      src={url}
+      alt={`imagen-${i}`}
+      style={{ width: '100px', height: '100px', objectFit: 'cover' }}
+    />
+  ))}</div>:null}
+ 
+      </Form.Group>
       </FloatingLabel>
 
       <FloatingLabel label="Precio de Habitacion" className='container '>

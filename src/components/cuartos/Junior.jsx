@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const Junior = ({logeado}) => {
 
 const [junior,setjunior]=useState([])
+
 const [load,setload]=useState(null)
   const Nav=useNavigate()
 
@@ -65,15 +66,13 @@ APiHAbitaciones()
               }}
             loop={true} 
             className='imgdev'>
-                    <SwiperSlide>
-                        <img src={item.imagen1} alt="hotel" className="img-cuartos" /> 
+              
+              
+                 {item.ImagenesHabitacion?.map((imgurl,i)=>(
+                <SwiperSlide key={i}>
+                        <img src={imgurl} alt={`img-${i}`} className="img-cuartos" /> 
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={item.imagen2}alt="hotel" className="img-cuartos" /> 
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={item.imagen3} alt="hotel" className="img-cuartos" /> 
-                    </SwiperSlide>
+              ))}
                    
                   </Swiper>
       <div className='info'>

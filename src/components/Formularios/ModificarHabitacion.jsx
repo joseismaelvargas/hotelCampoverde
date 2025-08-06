@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
@@ -11,27 +11,31 @@ import { modificarhabitaciones } from '../js/peticionesHabitaciones';
 import { useNavigate } from 'react-router-dom';
 import "../css/Formulario.css"
 const ModificarHabitacion = () => {
-
-
-  
-    const { register, handleSubmit ,formState:{errors},setValue} = useForm();
-       const{id}=useParams()
-     
-          
+     const { register, handleSubmit ,formState:{errors},setValue} = useForm();
+    const{id}=useParams()
      const Nav=useNavigate()
-    
-
+    const[archivarImg,setArchivarim]=useState([])
+  const[archivos,setArchivos]=useState([])
+  
      const modificar=(data)=>{
-       
-        const reservaModificada={
-         opciones:data.opciones,
-         info:data.info,
-         imagen1:data.img1,
-         imagen2:data.img2,
-         imagen3:data.img3,
-         carasteristicas:data.carasteristicas,
-         precio:Number(data.precio)
-        } 
+        const formData=new FormData();
+        formData.append("opciones",data.opciones);
+        formData.append("info",data.info);
+        formData.append("carasteristicas",data.carasteristicas);
+        formData.append("precio",Number(data.precio));
+        for(let i=0;i<archivarImg.length;i++){
+             formData.append("ImagenesHabitacion",archivarImg[i])
+        }
+        console.log(archivarImg)
+        // const reservaModificada={
+        //  opciones:data.opciones,
+        //  info:data.info,
+        //  imagen1:data.img1,
+        //  imagen2:data.img2,
+        //  imagen3:data.img3,
+        //  carasteristicas:data.carasteristicas,
+        //  precio:Number(data.precio)
+        // } 
       Swal.fire({
                       position: "top-center",
                       icon: "success",
@@ -39,9 +43,19 @@ const ModificarHabitacion = () => {
                                showConfirmButton: false,
                        timer: 5000
                                     });
-                        modificaradmin(reservaModificada,id)
+                        console.log(formData)
+                        modificaradmin(formData,id)
      
      }
+     const handleFileChange = (e) => {
+    const files = Array.from(e.target.files);
+     const urls = files.map(file => URL.createObjectURL(file));
+     setArchivos(urls)
+    setArchivarim(files)
+
+   
+  };
+     
      const modificaradmin=async(reservaModificada,id)=>{
        try{
          const response=await (modificarhabitaciones(reservaModificada,id))
@@ -59,18 +73,17 @@ const ModificarHabitacion = () => {
             const response=await fetch(URL_habitaciones+"/crear")
             if(response.status===200){
              const data=await response.json()
-             console.log(data)
+             console.log(data) 
+            
               if(data.length>0){
                const reservaencontrada= data.find((item)=>item._id===id)
                setValue('opciones',reservaencontrada.opciones)
                setValue('info',reservaencontrada.info)
-               setValue('img1',reservaencontrada.imagen1)
-               setValue('img2',reservaencontrada.imagen2)
-               setValue('img3',reservaencontrada.imagen3)
+            
                setValue('precio',reservaencontrada.precio)
                setValue('carasteristicas',reservaencontrada.carasteristicas)
           
-               
+                setArchivos(reservaencontrada.ImagenesHabitacion)
                
                
                
@@ -116,31 +129,35 @@ const ModificarHabitacion = () => {
             maxLength:{value:50,message:"no puede poner mas de 50 palabras en carasteristica"}
         })}/>
         <span className='text-danger' >{errors.carasteristicas&&errors.carasteristicas.message}</span> 
-      </FloatingLabel>
- 
-      <FloatingLabel label="ingrese la primera imagen de la habitacion" className='container my-2'>
-        <Form.Control type="text" placeholder="Info de Habitacion"  name='info' {...register("img1",{
-            required:{value:true,message:"Este campo debe estar lleno"},
-            minLength:{value:3,message:"Ponga una img valida"}
-        })}/>
-        <span className='text-danger' >{errors.img1&&errors.img1.message}</span> 
-      </FloatingLabel>
+      </FloatingLabel> 
+    
+     
+   <FloatingLabel className='container my-2 ' >
+          <Form.Group controlId="formFile" className="mb-3"> 
+            
+       
 
-      <FloatingLabel label="ingrese la segunda imagen de la habitacion" className='container my-2'>
-        <Form.Control type="text" placeholder="Info de Habitacion"  name='info' {...register("img2",{
-            required:{value:true,message:"Este campo debe estar lleno"},
-            minLength:{value:3,message:"Ponga una img valida"}
-        })}/>
-        <span className='text-danger' >{errors.img2&&errors.img2.message}</span> 
-      </FloatingLabel>
-      <FloatingLabel label="ingrese la tercera imagen de la habitacion" className='container my-2'>
-        <Form.Control type="text" placeholder="Info de Habitacion"  name='info' {...register("img3",{
-            required:{value:true,message:"Este campo debe estar lleno"},
-            minLength:{value:3,message:"Ponga una img valida"}
-        })}/>
-        <span className='text-danger' >{errors.img3&&errors.img3.message}</span> 
-      </FloatingLabel>
+     <Form.Control
+  type="file"
+  name='ImagenesHabitacion'
+  id='ImagenesHabitacion'
+  multiple
+  onChange={handleFileChange}
+/>
 
+ <div className="preview-container" style={{ margin:'5px', display: 'flex', gap: '10px' }}>
+  {archivos.map((url, i) => (
+    <img
+      key={i}
+      src={url}
+      alt={`imagen-${i}`}
+      style={{ width: '100px', height: '100px', objectFit: 'cover' }}
+    />
+  ))}
+</div> 
+      </Form.Group>
+      </FloatingLabel>
+   
       <FloatingLabel label="Precio de Habitacion" className='container '>
         <Form.Control type='Number' placeholder='Precio de Habitacion' name='personas' {...register("precio",{
             required:{value:true,message:"Indique el Precio"}
